@@ -1,0 +1,102 @@
+$mdc-theme-primary: #003e7e;
+$mdc-theme-secondary: #ffc423;
+$mdc-theme-on-primary: #442b2d;
+$mdc-theme-on-secondary: #442b2d;
+
+
+
+@import 'material-components-web/material-components-web';
+@mixin center-horizontal {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.intl-bar {
+  @include mdc-toolbar-fill-color(#fff);
+  @include mdc-toolbar-ink-color(#003e7e);
+  border-radius: 5px;
+}
+
+.card-img {
+  width: 100%;
+  border-radius: 4px;
+}
+
+.intl-grid {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.intl-field {
+  width: 100%;
+}
+
+
+
+@media (min-width: mdc-layout-grid-breakpoint-min(desktop)) {
+  .form-card {
+    width: 840px;
+    @include center-horizontal;
+  }
+  .show-desktop-only {
+    display: block !important;
+  }
+  .show-tablet-only {
+    display: none !important;
+  }
+  .show-phone-only {
+    display: none !important;
+  }
+}
+
+@media (min-width: mdc-layout-grid-breakpoint-min(tablet)) and (max-width: mdc_layout-grid-breakpoint-min(desktop)) {
+  .form-card {
+    width: 100%;
+  }
+  .show-desktop-only {
+    display: none !important;
+  }
+  .show-tablet-only {
+    display: block !important;
+  }
+  .show-phone-only {
+    display: none !important;
+  }
+}
+
+@media (min-width: 0px) and (max-width: mdc_layout-grid-breakpoint-min(tablet)) {
+
+  .show-desktop-only {
+    display: none !important;
+  }
+  .show-tablet-only {
+    display: none !important;
+  }
+  .show-phone-only {
+    display: block !important;
+  }
+}
+.indent {
+  margin-left: 21px
+}
+.parallax {
+    /* The image used */
+    background-image: url("/app/canoe.jpg");
+
+    /* Set a specific height */
+    height: 200px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: 100%, 200px;
+}
+
+html {
+
+  margin: 0;
+  background: linear-gradient(180deg, rgba(0,62,126,1) 0%, rgba(0,44,88,1) 100%);
+  height: 3000px;
+}

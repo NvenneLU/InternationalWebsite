@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>International Form</title>
+  <link rel="stylesheet" href="/assets/intl.bundle.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <div class="mdc-card form-card">
+    <header class="mdc-toolbar intl-bar">
+      <div class="mdc-toolbar__row">
+        <section class="mdc-toolbar__section mdc-toolbar__section--align-start">
+          <img src="https://laurentian.ca/images/logo/laurentian.png" style="width:300px; margin: 5px;">
+
+
+        </section>
+        <section class="mdc-toolbar__section mdc-toolbar__section--align-end mdc-toolbar__section--shrink-to-fit">
+          <button class="mdc-icon-button material-icons">language</button>
+        </section>
+      </div>
+    </header>
+    <div class="parallax">
+
+    </div>
+    <div class="mdc-tab-bar" role="tablist">
+      <div class="mdc-tab-scroller">
+        <div class="mdc-tab-scroller__scroll-area">
+          <div class="mdc-tab-scroller__scroll-content">
+            <button class="mdc-tab mdc-tab--active" role="tab" aria-selected="true" tabindex="0">
+              <span class="mdc-tab__content">
+                <span class="mdc-tab__text-label show-desktop-only">Personal</span>
+                <span class="mdc-tab__icon material-icons show-tablet-only" aria-hidden="true">account_circle</span>
+                <span class="mdc-tab__icon material-icons show-phone-only" aria-hidden="true">account_circle</span>
+              </span>
+              <span class="mdc-tab-indicator mdc-tab-indicator--active">
+                <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+              </span>
+              <span class="mdc-tab__ripple"></span>
+            </button>
+            <button class="mdc-tab" role="tab" aria-selected="false" tabindex="1">
+              <span class="mdc-tab__content">
+                <span class="mdc-tab__text-label show-desktop-only">Program</span>
+                <span class="mdc-tab__icon material-icons show-tablet-only" aria-hidden="true">book</span>
+                <span class="mdc-tab__icon material-icons show-phone-only" aria-hidden="true">book</span>
+              </span>
+              <span class="mdc-tab-indicator">
+                <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+              </span>
+              <span class="mdc-tab__ripple"></span>
+            </button>
+            <button class="mdc-tab" role="tab" aria-selected="false" tabindex="2">
+              <span class="mdc-tab__content">
+                <span class="mdc-tab__text-label show-desktop-only">High School</span>
+                <span class="mdc-tab__icon material-icons show-tablet-only" aria-hidden="true">school</span>
+                <span class="mdc-tab__icon material-icons show-phone-only" aria-hidden="true">school</span>
+              </span>
+              <span class="mdc-tab-indicator">
+                <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+              </span>
+              <span class="mdc-tab__ripple"></span>
+            </button>
+            <button class="mdc-tab" role="tab" aria-selected="false" tabindex="3">
+              <span class="mdc-tab__content">
+                <span class="mdc-tab__text-label show-desktop-only">Post-secondary</span>
+                <span class="mdc-tab__icon material-icons show-tablet-only" aria-hidden="true">school</span>
+                <span class="mdc-tab__icon material-icons show-phone-only" aria-hidden="true">school</span>
+              </span>
+              <span class="mdc-tab-indicator">
+                <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+              </span>
+              <span class="mdc-tab__ripple"></span>
+            </button>
+            <button class="mdc-tab" role="tab" aria-selected="false" tabindex="4" disabled>
+              <span class="mdc-tab__content">
+                <span class="mdc-tab__text-label show-desktop-only">Payment</span>
+                <span class="mdc-tab__icon material-icons show-tablet-only" aria-hidden="true">payment</span>
+                <span class="mdc-tab__icon material-icons show-phone-only" aria-hidden="true">payment</span>
+              </span>
+              <span class="mdc-tab-indicator">
+                <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+              </span>
+              <span class="mdc-tab__ripple"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <section data-step="0" class="step">
+      <h1 class="mdc-typography--headline4 indent">Personal Information</h1>
+      <div class="mdc-layout-grid intl-grid">
+        <div class="mdc-layout-grid__inner">
+          <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-12-phone">
+            <div class="mdc-text-field intl-field">
+              <input type="text" id="textfield-firstname" class="mdc-text-field__input">
+              <label class="mdc-floating-label" for="textfield-firstname">First Name</label>
+              <div class="mdc-line-ripple"></div>
+            </div>
+            <p class="mdc-text-field-helper-text" aria-hidden="true">All legal given names</p>
+          </div>
+          <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-12-phone">
+            <div class="mdc-text-field intl-field">
+              <input type="text" id="textfield-middlename" class="mdc-text-field__input">
+              <label class="mdc-floating-label" for="textfield-middlename">Middle Name</label>
+              <div class="mdc-line-ripple"></div>
+            </div>
+            <p class="mdc-text-field-helper-text" aria-hidden="true">All legal middle names</p>
+          </div>
+          <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-12-phone">
+            <div class="mdc-text-field intl-field">
+              <input type="text" id="textfield-familyname" class="mdc-text-field__input">
+              <label class="mdc-floating-label" for="textfield-familyname">Family Name</label>
+              <div class="mdc-line-ripple"></div>
+            </div>
+            <p class="mdc-text-field-helper-text" aria-hidden="true">All Legal last name</p>
+          </div>
+          <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-12-phone">
+            <div class="mdc-text-field intl-field">
+              <input type="text" id="textfield-formername" class="mdc-text-field__input">
+              <label class="mdc-floating-label" for="textfield-formername">Former Name</label>
+              <div class="mdc-line-ripple"></div>
+            </div>
+            <p class="mdc-text-field-helper-text" aria-hidden="true">if applicable</p>
+          </div>
+          <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-12-phone">
+            <div class="mdc-text-field intl-field">
+              <input type="date" id="textfield-dob" class="mdc-text-field__input">
+              <label class="mdc-floating-label" for="textfield-dob">Date of birth</label>
+              <div class="mdc-line-ripple"></div>
+            </div>
+            <p class="mdc-text-field-helper-text" aria-hidden="true"></p>
+          </div>
+          <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-12-phone">Line 6</div>
+          <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-12-phone">Line 7</div>
+        </div>
+      </div>
+    </section>
+    <section data-step="1" class="step hidden">
+
+    </section>
+  </div>
+
+</body>
+<script src="/assets/intl.bundle.js" async></script>
+
+</html>
