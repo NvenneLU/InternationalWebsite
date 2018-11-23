@@ -25,6 +25,7 @@
     "webpack-dev-server": "^2.11.3"
   },
   "dependencies": {
+    "@webcomponents/custom-elements": "^1.2.1",
     "material-components-web": "^0.41.1"
   }
 }
