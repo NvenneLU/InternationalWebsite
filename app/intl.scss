@@ -11,6 +11,17 @@ $mdc-theme-on-secondary: #442b2d;
   left: 50%;
   transform: translate(-50%);
 }
+table {
+  margin: 0;
+  padding: 0;
+}
+td {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  left: -2px;
+}
+
 
 .intl-bar {
   @include mdc-toolbar-fill-color(#fff);
@@ -24,8 +35,11 @@ $mdc-theme-on-secondary: #442b2d;
 }
 
 .intl-grid {
-  margin-left: 5px;
-  margin-right: 5px;
+
+}
+
+.move-row {
+  transition: all 500ms $mdc-animation-standard-curve-timing-function;
 }
 
 .intl-field {
@@ -54,6 +68,13 @@ $mdc-theme-on-secondary: #442b2d;
   .show-phone-only {
     display: none !important;
   }
+  .parallax {
+    background-position-x: 280px;
+  }
+
+  .logo {
+    width: 300px;
+  }
 }
 
 @media (min-width: mdc-layout-grid-breakpoint-min(tablet)) and (max-width: mdc_layout-grid-breakpoint-min(desktop)) {
@@ -69,6 +90,12 @@ $mdc-theme-on-secondary: #442b2d;
   .show-phone-only {
     display: none !important;
   }
+  .parallax {
+    background-position-x: -280px;
+  }
+  .logo {
+    width: 300px;
+  }
 }
 
 @media (min-width: 0px) and (max-width: mdc_layout-grid-breakpoint-min(tablet)) {
@@ -81,6 +108,12 @@ $mdc-theme-on-secondary: #442b2d;
   }
   .show-phone-only {
     display: block !important;
+  }
+  .parallax {
+    background-position-x: -380px;
+  }
+  .logo {
+    width: 200px;
   }
 }
 .indent {
@@ -95,9 +128,14 @@ $mdc-theme-on-secondary: #442b2d;
 
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
-    background-position: top center;
+    background-position-y: -300px;
     background-repeat: no-repeat;
-    background-size: 100%, 200px;
+    background-size: cover;
+}
+
+.animated-section {
+  width: 840px;
+  margin: 0;
 }
 
 

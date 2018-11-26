@@ -12,53 +12,78 @@ const dataObj = {
     console.log('my cool function');
   }
 };
+let currentTab = 0;
+var displaySize;
+resize();
+window.addEventListener("resize", resize);
 
+function resize() {
 
+  displaySize = document.querySelector('.formDisplay').offsetWidth;
+  document.querySelectorAll('.animated-section, td').forEach(td => {
+    td.style.width = displaySize + "px";
+  });
+  document.querySelector('table').style.width = displaySize * 5;
+  console.log(currentTab);
+  document.querySelector('.move-row').style.transform = "translateX(" + displaySize * (currentTab * -1) + "px)";
+}
 
 
 const tabBar = new MDCTabBar(document.querySelector('.mdc-tab-bar'));
-let currentTab = 0;
+
 let completedTab = [0,0,0,0,0];
 tabBar.listen('MDCTabBar:activated', function(event) {
+
   let nextTab = event.detail.index;
-  document.querySelectorAll('.step').forEach(section => {
-    if(section.dataset.step == nextTab) {
-      section.style.display = "block";
+  currentTab = nextTab;
+  let diff = (nextTab) * -1;
+  document.querySelector('.move-row').style.transform = "translateX(" + displaySize * diff + "px)";
+  document.querySelectorAll('.step').forEach(step => {
+    if(step.dataset.step == nextTab) {
+      step.classList.remove("hidden");
     } else {
-      section.style.display = "none";
+      step.classList.add("hidden");
     }
-  });
-  console.log(event);
+  })
 });
 
-function checkTabs() {
-  document.querySelectorAll('.mdc-tab').forEach(tab => {
-    if(completedTab[tab.tabIndex] == 0) {
-      tab.disabled = true;
-    } else {
-      tab.disabled = false;
-    }
-  });
-}
+// function checkTabs() {
+//   document.querySelectorAll('.mdc-tab').forEach(tab => {
+//     if(completedTab[tab.tabIndex] == 0) {
+//       tab.disabled = true;
+//     } else {
+//       tab.disabled = false;
+//     }
+//   });
+// }
 
-checkTabs();
+// checkTabs();
+
 
 function checkValidity(formID, callback) {
   let form = document.forms['form-step-' + formID];
   for(let i = 0; i < form.elements.length; i++) {
     let input = form.elements.item(i);
-    if(input.required && input.value == "") {
-      console.log(input);
-      input.setCustomValidity(input.dataset.name + " is required");
-    } else {
-      input.setCustomValidity("");
-    }
+    input.addEventListener("change", function() {checkValidityInput(input)});
+
   }
-  console.log(form.reportValidity());
+  if(form.reportValidity()) {
+    callback();
+  }
+}
+
+function checkValidityInput(input) {
+  console.log("typeing");
+  if(input.required && input.value == "") {
+    input.setCustomValidity(input.nextSibling.nextSibling.innerHTML + " is required");
+  } else {
+    input.setCustomValidity("");
+  }
 }
 
 document.querySelectorAll('.form-submit').forEach(button => {
   button.addEventListener('click', function() {
+    document.querySelector('.move-row').classList.add('move-step1');
     checkValidity(button.dataset.step, function() {
       completedTab[button.dataset.step] = 1;
       tabBar.activateTab(button.dataset.tostep);
