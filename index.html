@@ -20,7 +20,20 @@
 
         </section>
         <section class="mdc-toolbar__section mdc-toolbar__section--align-end mdc-toolbar__section--shrink-to-fit">
-          <button class="mdc-icon-button material-icons">language</button>
+          <div id="demo-menu" class="mdc-menu-surface--anchor">
+            <button class="mdc-icon-button material-icons languageButton">language</button>
+              <div class="mdc-menu mdc-menu-surface" tabindex="-1">
+                <ul class="mdc-list" role="menu" aria-hidden="true" aria-orientation="vertical">
+                  <li class="mdc-list-item" role="menuitem">
+                    <span class="mdc-list-item__text">English</span>
+                  </li>
+                  <li class="mdc-list-item" role="menuitem">
+                    <span class="mdc-list-item__text">French</span>
+                  </li>
+                </ul>
+            </div>
+          </div>
+
         </section>
       </div>
     </header>
@@ -28,7 +41,7 @@
 
     </div>
     <!-- Tabbed Navigation -->
-    <div class="mdc-tab-bar" role="tablist" style="position: sticky; top: 0; z-index: 99; background-color: #fff;">
+    <div class="mdc-tab-bar" role="tablist" style="position: sticky; top: 0; z-index: 1; background-color: #fff;">
       <div class="mdc-tab-scroller">
         <div class="mdc-tab-scroller__scroll-area">
           <div class="mdc-tab-scroller__scroll-content">
@@ -102,666 +115,935 @@
     <!-- Tabbed Navigation END -->
     <!-- Personal information page, step 1 -->
     <div class="formDisplay" style="overflow: hidden;">
-      <table>
-        <tr class="move-row">
-          <td>
-      <section data-step="0" class="animated-section">
-        <form id="form-step-0" action="javascript:void(0);" novalidate>
-          <h1 class="mdc-typography--headline4 indent">Personal Information</h1>
-          <div class="mdc-layout-grid intl-grid">
-            <div class="mdc-layout-grid__inner">
-              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
-                <!-- First name field TYPE: TEXT, REQUIRED-->
-                <div class="mdc-text-field intl-field">
-                  <input type="text" id="textfield-firstname" class="mdc-text-field__input" required data-name="First name">
-                  <label class="mdc-floating-label" for="textfield-firstname">First Name</label>
-                  <div class="mdc-line-ripple"></div>
-                </div>
-                <p class="mdc-text-field-helper-text" aria-hidden="true">All legal given names</p>
-              </div>
-              <!-- Middle name field TYPE: TEXT -->
-              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
-                <div class="mdc-text-field intl-field">
-                  <input type="text" id="textfield-middlename" class="mdc-text-field__input">
-                  <label class="mdc-floating-label" for="textfield-middlename">Middle Name</label>
-                  <div class="mdc-line-ripple"></div>
-                </div>
-                <p class="mdc-text-field-helper-text" aria-hidden="true">All legal middle names</p>
-              </div>
-              <!-- Family name field TYPE: TEXT, REQUIRED-->
-              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
-                <div class="mdc-text-field intl-field">
-                  <input type="text" id="textfield-familyname" class="mdc-text-field__input" required data-name="Last name">
-                  <label class="mdc-floating-label" for="textfield-familyname">Family Name</label>
-                  <div class="mdc-line-ripple"></div>
-                </div>
-                <p class="mdc-text-field-helper-text" aria-hidden="true">All Legal last name</p>
-              </div>
-              <!-- Former name field TYPE: TEXT -->
-              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
-                <div class="mdc-text-field intl-field">
-                  <input type="text" id="textfield-formername" class="mdc-text-field__input">
-                  <label class="mdc-floating-label" for="textfield-formername">Former Name</label>
-                  <div class="mdc-line-ripple"></div>
-                </div>
-                <p class="mdc-text-field-helper-text" aria-hidden="true">if applicable</p>
-              </div>
-              <!-- Date of birth field TYPE: DATE, REQUIRED -->
-              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
-                <div class="mdc-text-field intl-field">
-                  <input type="date" id="textfield-dob" class="mdc-text-field__input" required>
-                  <label class="mdc-floating-label" for="textfield-dob">Date of birth</label>
-                  <div class="mdc-line-ripple"></div>
-                </div>
-                <p class="mdc-text-field-helper-text" aria-hidden="true"></p>
-              </div>
-              <!-- Gender field TYPE: SELECT, REQUIRED-->
-              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
-                <div class="mdc-select intl-field">
-                  <i class="mdc-select__dropdown-icon"></i>
-                  <select class="mdc-select__native-control" required>
-                    <option value="" disabled selected></option>
-                    <option value="female">
-                      Female
-                    </option>
-                    <option value="male">
-                      Male
-                    </option>
-                    <option value="other">
-                      Other
-                    </option>
-                  </select>
-                  <label class="mdc-floating-label">Gender</label>
-                  <div class="mdc-line-ripple"></div>
-                </div>
-              </div>
-            </div>
-            <!-- Telephone Section -->
-            <div class="mdc-layout-grid__inner">
-              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
-                <h1 class="mdc-typography--subtitle1">Telephone</h1>
-                <div class="divider"></div>
-              </div>
-              <!-- Phone primary field TYPE: TEL, REQUIRED -->
-              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
-                <div class="mdc-text-field intl-field">
-                  <input type="tel" id="textfield-telprimary" class="mdc-text-field__input" required>
-                  <label class="mdc-floating-label" for="textfield-telprimary">Phone (primary)</label>
-                  <div class="mdc-line-ripple"></div>
-                </div>
-                <p class="mdc-text-field-helper-text" aria-hidden="true">Home / Mobile</p>
-              </div>
-              <!-- Phone work field TYPE: TEL -->
-              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
-                <div class="mdc-text-field intl-field">
-                  <input type="tel" id="textfield-telwork" class="mdc-text-field__input">
-                  <label class="mdc-floating-label" for="textfield-telwork">Phone (work)</label>
-                  <div class="mdc-line-ripple"></div>
-                </div>
-                <p class="mdc-text-field-helper-text" aria-hidden="true">Business / Company</p>
-              </div>
-            </div>
-            <!-- Address section -->
-            <div class="mdc-layout-grid__inner">
-              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
-                <h1 class="mdc-typography--subtitle1">Address</h1>
-                <div class="divider"></div>
-              </div>
-              <!-- Address line 1 field TYPE: TEXT, REQUIRED -->
-              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
-                <div class="mdc-text-field intl-field">
-                  <input type="text" id="textfield-address__line1" class="mdc-text-field__input" required>
-                  <label class="mdc-floating-label" for="textfield-address__line1">Address Line 1</label>
-                  <div class="mdc-line-ripple"></div>
-                </div>
-                <p class="mdc-text-field-helper-text" aria-hidden="true">Street number, P.O box, Suit Number</p>
-              </div>
-              <!-- Address line 2 field TYPE: TEXT -->
-              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
-                <div class="mdc-text-field intl-field">
-                  <input type="text" id="textfield-address__line2" class="mdc-text-field__input">
-                  <label class="mdc-floating-label" for="textfield-address__line2">Address Line 2</label>
-                  <div class="mdc-line-ripple"></div>
-                </div>
-                <p class="mdc-text-field-helper-text" aria-hidden="true">Street number, P.O box, Suit Number</p>
-              </div>
-              <!-- City field TYPE: TEXT, REQUIRED -->
-              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
-                <div class="mdc-text-field intl-field">
-                  <input type="text" id="textfield-address__city" class="mdc-text-field__input" required>
-                  <label class="mdc-floating-label" for="textfield-address__city">City</label>
-                  <div class="mdc-line-ripple"></div>
-                </div>
-                <p class="mdc-text-field-helper-text" aria-hidden="true"></p>
-              </div>
-              <!-- State field TYPE: TEXT, REQUIRED -->
-              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
-                <div class="mdc-text-field intl-field">
-                  <input type="text" id="textfield-address__state" class="mdc-text-field__input" required>
-                  <label class="mdc-floating-label" for="textfield-address__state">State / Province / Region</label>
-                  <div class="mdc-line-ripple"></div>
-                </div>
-                <p class="mdc-text-field-helper-text" aria-hidden="true"></p>
-              </div>
-              <!-- Postal code field TYPE: TEXT, REQUIRED -->
-              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
-                <div class="mdc-text-field intl-field">
-                  <input type="text" id="textfield-address__zip" class="mdc-text-field__input" required>
-                  <label class="mdc-floating-label" for="textfield-address__zip">Postal Code / ZIP</label>
-                  <div class="mdc-line-ripple"></div>
-                </div>
-                <p class="mdc-text-field-helper-text" aria-hidden="true"></p>
-              </div>
-              <!-- Country field TYPE: SELECT, REQUIRED -->
-              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
-                <div class="mdc-select intl-field">
-                  <i class="mdc-select__dropdown-icon"></i>
-                  <select class="mdc-select__native-control" required>
-                    <option value="" disabled selected></option>
-                    <option value="canada">
-                      Canada
-                    </option>
-                  </select>
-                  <label class="mdc-floating-label">Country</label>
-                  <div class="mdc-line-ripple"></div>
-                </div>
-              </div>
-              <!-- Country of citizenship field TYPE: SELECT, REQUIRED -->
-              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-8-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
-                <div class="mdc-select intl-field">
-                  <i class="mdc-select__dropdown-icon"></i>
-                  <select class="mdc-select__native-control" required>
-                    <option value="" disabled selected></option>
-                    <option value="canada">
-                      Canada
-                    </option>
-                  </select>
-                  <label class="mdc-floating-label">Country of citizenship</label>
-                  <div class="mdc-line-ripple"></div>
-                </div>
-                <p class="mdc-text-field-helper-text" aria-hidden="true"></p>
-              </div>
-            </div>
-            <div class="mdc-layout-grid__inner">
-              <!-- Email section -->
-              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
-                <h1 class="mdc-typography--subtitle1">Email information</h1>
-                <div class="divider"></div>
-              </div>
-              <!-- Email primary field TYPE: EMAIL, REQUIRED -->
-              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
-                <div class="mdc-text-field intl-field">
-                  <input type="email" id="textfield-email__primary" class="mdc-text-field__input" required>
-                  <label class="mdc-floating-label" for="textfield-email__primary">Email (Primary)</label>
-                  <div class="mdc-line-ripple"></div>
-                </div>
-                <p class="mdc-text-field-helper-text" aria-hidden="true"></p>
-              </div>
-              <!-- Email secondary field TYPE: EMAIL -->
-              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
-                <div class="mdc-text-field intl-field">
-                  <input type="email" id="textfield-email__secondary" class="mdc-text-field__input" >
-                  <label class="mdc-floating-label" for="textfield-email__secondary">Email (Secondary)</label>
-                  <div class="mdc-line-ripple"></div>
-                </div>
-                <p class="mdc-text-field-helper-text" aria-hidden="true"></p>
-              </div>
-            </div>
-            <div class="mdc-layout-grid__inner">
-              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
-                <div class="divider"></div>
-              </div>
-              <!-- Highest level of Education field TYPE: SELECT, REQUIRED -->
-              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
-                <div class="mdc-select intl-field">
-                  <i class="mdc-select__dropdown-icon"></i>
-                  <select class="mdc-select__native-control" required>
-                    <option value="" disabled selected></option>
-                    <option value="highschool">
-                      High School
-                    </option>
-                    <option value="college">
-                      College Diploma
-                    </option>
-                    <option value="university">
-                      University Degree
-                    </option>
-                  </select>
-                  <label class="mdc-floating-label">Highest Level of Education</label>
-                  <div class="mdc-line-ripple"></div>
-                </div>
-              </div>
-              <!-- Principal language of communication field TYPE: RADIO, REQUIRED -->
-              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
-                <h1 class="mdc-typography--subtitle2">Principal language of communication</h1>
-                <div class="mdc-form-field">
-                  <div class="mdc-radio">
-                    <input class="mdc-radio__native-control" type="radio" id="radio-language__principal1" name="radio-language__principal" checked required>
-                    <div class="mdc-radio__background">
-                      <div class="mdc-radio__outer-circle"></div>
-                      <div class="mdc-radio__inner-circle"></div>
+      <table style="table-layout: fixed; max-height: 350px;border-collapse: collapse; border-spacing: 0;">
+        <tbody class="table-height">
+          <tr class="move-row">
+            <td>
+              <section data-step="0" class="animated-section">
+                <form id="form-step-0" action="javascript:void(0);" novalidate>
+                  <h1 class="mdc-typography--headline4 indent">Personal Information</h1>
+                  <div class="mdc-layout-grid intl-grid">
+                    <div class="mdc-layout-grid__inner">
+                      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
+                        <!-- First name field TYPE: TEXT, REQUIRED-->
+                        <div class="mdc-text-field intl-field">
+                          <input type="text" id="textfield-firstname" class="mdc-text-field__input" required>
+                          <label class="mdc-floating-label" for="textfield-firstname">First Name</label>
+                          <div class="mdc-line-ripple"></div>
+                        </div>
+                        <p class="mdc-text-field-helper-text" aria-hidden="true">All legal given names</p>
+                      </div>
+                      <!-- Middle name field TYPE: TEXT -->
+                      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
+                        <div class="mdc-text-field intl-field">
+                          <input type="text" id="textfield-middlename" class="mdc-text-field__input">
+                          <label class="mdc-floating-label" for="textfield-middlename">Middle Name</label>
+                          <div class="mdc-line-ripple"></div>
+                        </div>
+                        <p class="mdc-text-field-helper-text" aria-hidden="true">All legal middle names</p>
+                      </div>
+                      <!-- Family name field TYPE: TEXT, REQUIRED-->
+                      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
+                        <div class="mdc-text-field intl-field">
+                          <input type="text" id="textfield-familyname" class="mdc-text-field__input" required data-name="Last name">
+                          <label class="mdc-floating-label" for="textfield-familyname">Family Name</label>
+                          <div class="mdc-line-ripple"></div>
+                        </div>
+                        <p class="mdc-text-field-helper-text" aria-hidden="true">All Legal last name</p>
+                      </div>
+                      <!-- Former name field TYPE: TEXT -->
+                      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
+                        <div class="mdc-text-field intl-field">
+                          <input type="text" id="textfield-formername" class="mdc-text-field__input">
+                          <label class="mdc-floating-label" for="textfield-formername">Former Name</label>
+                          <div class="mdc-line-ripple"></div>
+                        </div>
+                        <p class="mdc-text-field-helper-text" aria-hidden="true">if applicable</p>
+                      </div>
+                      <!-- Date of birth field TYPE: DATE, REQUIRED -->
+                      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
+                        <div class="mdc-text-field intl-field">
+                          <input type="date" id="textfield-dob" class="mdc-text-field__input" required>
+                          <label class="mdc-floating-label" for="textfield-dob">Date of birth</label>
+                          <div class="mdc-line-ripple"></div>
+                        </div>
+                        <p class="mdc-text-field-helper-text" aria-hidden="true"></p>
+                      </div>
+                      <!-- Gender field TYPE: SELECT, REQUIRED-->
+                      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
+                        <div class="mdc-select intl-field">
+                          <i class="mdc-select__dropdown-icon"></i>
+                          <select class="mdc-select__native-control" required>
+                            <option value="" disabled selected></option>
+                            <option value="female">
+                              Female
+                            </option>
+                            <option value="male">
+                              Male
+                            </option>
+                            <option value="other">
+                              Other
+                            </option>
+                          </select>
+                          <label class="mdc-floating-label">Gender</label>
+                          <div class="mdc-line-ripple"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Telephone Section -->
+                    <div class="mdc-layout-grid__inner">
+                      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
+                        <h1 class="mdc-typography--subtitle1">Telephone</h1>
+                        <div class="divider"></div>
+                      </div>
+                      <!-- Phone primary field TYPE: TEL, REQUIRED -->
+                      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
+                        <div class="mdc-text-field intl-field">
+                          <input type="tel" id="textfield-telprimary" class="mdc-text-field__input" required>
+                          <label class="mdc-floating-label" for="textfield-telprimary">Phone (primary)</label>
+                          <div class="mdc-line-ripple"></div>
+                        </div>
+                        <p class="mdc-text-field-helper-text" aria-hidden="true">Home / Mobile</p>
+                      </div>
+                      <!-- Phone work field TYPE: TEL -->
+                      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
+                        <div class="mdc-text-field intl-field">
+                          <input type="tel" id="textfield-telwork" class="mdc-text-field__input">
+                          <label class="mdc-floating-label" for="textfield-telwork">Phone (work)</label>
+                          <div class="mdc-line-ripple"></div>
+                        </div>
+                        <p class="mdc-text-field-helper-text" aria-hidden="true">Business / Company</p>
+                      </div>
+                    </div>
+                    <!-- Address section -->
+                    <div class="mdc-layout-grid__inner">
+                      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
+                        <h1 class="mdc-typography--subtitle1">Address</h1>
+                        <div class="divider"></div>
+                      </div>
+                      <!-- Address line 1 field TYPE: TEXT, REQUIRED -->
+                      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
+                        <div class="mdc-text-field intl-field">
+                          <input type="text" id="textfield-address__line1" class="mdc-text-field__input" required>
+                          <label class="mdc-floating-label" for="textfield-address__line1">Address Line 1</label>
+                          <div class="mdc-line-ripple"></div>
+                        </div>
+                        <p class="mdc-text-field-helper-text" aria-hidden="true">Street number, P.O box, Suit Number</p>
+                      </div>
+                      <!-- Address line 2 field TYPE: TEXT -->
+                      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
+                        <div class="mdc-text-field intl-field">
+                          <input type="text" id="textfield-address__line2" class="mdc-text-field__input">
+                          <label class="mdc-floating-label" for="textfield-address__line2">Address Line 2</label>
+                          <div class="mdc-line-ripple"></div>
+                        </div>
+                        <p class="mdc-text-field-helper-text" aria-hidden="true">Street number, P.O box, Suit Number</p>
+                      </div>
+                      <!-- City field TYPE: TEXT, REQUIRED -->
+                      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
+                        <div class="mdc-text-field intl-field">
+                          <input type="text" id="textfield-address__city" class="mdc-text-field__input" required>
+                          <label class="mdc-floating-label" for="textfield-address__city">City</label>
+                          <div class="mdc-line-ripple"></div>
+                        </div>
+                        <p class="mdc-text-field-helper-text" aria-hidden="true"></p>
+                      </div>
+                      <!-- State field TYPE: TEXT, REQUIRED -->
+                      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
+                        <div class="mdc-text-field intl-field">
+                          <input type="text" id="textfield-address__state" class="mdc-text-field__input" required>
+                          <label class="mdc-floating-label" for="textfield-address__state">State / Province / Region</label>
+                          <div class="mdc-line-ripple"></div>
+                        </div>
+                        <p class="mdc-text-field-helper-text" aria-hidden="true"></p>
+                      </div>
+                      <!-- Postal code field TYPE: TEXT, REQUIRED -->
+                      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
+                        <div class="mdc-text-field intl-field">
+                          <input type="text" id="textfield-address__zip" class="mdc-text-field__input" required>
+                          <label class="mdc-floating-label" for="textfield-address__zip">Postal Code / ZIP</label>
+                          <div class="mdc-line-ripple"></div>
+                        </div>
+                        <p class="mdc-text-field-helper-text" aria-hidden="true"></p>
+                      </div>
+                      <!-- Country field TYPE: SELECT, REQUIRED -->
+                      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
+                        <div class="mdc-select intl-field">
+                          <i class="mdc-select__dropdown-icon"></i>
+                          <select class="mdc-select__native-control" required>
+                            <option value="" disabled selected></option>
+                            <option value="canada">
+                              Canada
+                            </option>
+                          </select>
+                          <label class="mdc-floating-label">Country</label>
+                          <div class="mdc-line-ripple"></div>
+                        </div>
+                      </div>
+                      <!-- Country of citizenship field TYPE: SELECT, REQUIRED -->
+                      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-8-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
+                        <div class="mdc-select intl-field">
+                          <i class="mdc-select__dropdown-icon"></i>
+                          <select class="mdc-select__native-control" required>
+                            <option value="" disabled selected></option>
+                            <option value="canada">
+                              Canada
+                            </option>
+                          </select>
+                          <label class="mdc-floating-label">Country of citizenship</label>
+                          <div class="mdc-line-ripple"></div>
+                        </div>
+                        <p class="mdc-text-field-helper-text" aria-hidden="true"></p>
+                      </div>
+                    </div>
+                    <div class="mdc-layout-grid__inner">
+                      <!-- Email section -->
+                      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
+                        <h1 class="mdc-typography--subtitle1">Email information</h1>
+                        <div class="divider"></div>
+                      </div>
+                      <!-- Email primary field TYPE: EMAIL, REQUIRED -->
+                      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
+                        <div class="mdc-text-field intl-field">
+                          <input type="email" id="textfield-email__primary" class="mdc-text-field__input" required pattern="^[a-zA-Z0-9.!#$%'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$">
+                          <label class="mdc-floating-label" for="textfield-email__primary">Email (Primary)</label>
+                          <div class="mdc-line-ripple"></div>
+                        </div>
+                        <p class="mdc-text-field-helper-text" aria-hidden="true"></p>
+                      </div>
+                      <!-- Email secondary field TYPE: EMAIL -->
+                      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
+                        <div class="mdc-text-field intl-field">
+                          <input type="email" id="textfield-email__secondary" class="mdc-text-field__input">
+                          <label class="mdc-floating-label" for="textfield-email__secondary">Email (Secondary)</label>
+                          <div class="mdc-line-ripple"></div>
+                        </div>
+                        <p class="mdc-text-field-helper-text" aria-hidden="true"></p>
+                      </div>
+                    </div>
+                    <div class="mdc-layout-grid__inner">
+                      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
+                        <div class="divider"></div>
+                      </div>
+                      <!-- Highest level of Education field TYPE: SELECT, REQUIRED -->
+                      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
+                        <div class="mdc-select intl-field">
+                          <i class="mdc-select__dropdown-icon"></i>
+                          <select class="mdc-select__native-control" required>
+                            <option value="" disabled selected></option>
+                            <option value="highschool">
+                              High School
+                            </option>
+                            <option value="college">
+                              College Diploma
+                            </option>
+                            <option value="university">
+                              University Degree
+                            </option>
+                          </select>
+                          <label class="mdc-floating-label">Highest Level of Education</label>
+                          <div class="mdc-line-ripple"></div>
+                        </div>
+                      </div>
+                      <!-- Principal language of communication field TYPE: RADIO, REQUIRED -->
+                      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
+                        <h1 class="mdc-typography--subtitle2">Principal language of communication</h1>
+                        <div class="mdc-form-field">
+                          <div class="mdc-radio">
+                            <input class="mdc-radio__native-control" type="radio" id="radio-language__principal1" name="radio-language__principal" checked required>
+                            <div class="mdc-radio__background">
+                              <div class="mdc-radio__outer-circle"></div>
+                              <div class="mdc-radio__inner-circle"></div>
+                            </div>
+                          </div>
+                          <label for="radio-language__principal1">English</label>
+                        </div>
+                        <br>
+                        <div class="mdc-form-field">
+                          <div class="mdc-radio">
+                            <input class="mdc-radio__native-control" type="radio" id="radio-language__principal2" name="radio-language__principal">
+                            <div class="mdc-radio__background">
+                              <div class="mdc-radio__outer-circle"></div>
+                              <div class="mdc-radio__inner-circle"></div>
+                            </div>
+                          </div>
+                          <label for="radio-language__principal2">French</label>
+                        </div>
+                      </div>
+                      <!-- First language field TYPE: RADIO, REQUIRED -->
+                      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
+                        <h1 class="mdc-typography--subtitle2">First language</h1>
+                        <div class="mdc-form-field">
+                          <div class="mdc-radio">
+                            <input class="mdc-radio__native-control" type="radio" id="radio-language__first1" name="radio-language__first" checked required>
+                            <div class="mdc-radio__background">
+                              <div class="mdc-radio__outer-circle"></div>
+                              <div class="mdc-radio__inner-circle"></div>
+                            </div>
+                          </div>
+                          <label for="radio-language__first1">English</label>
+                        </div>
+                        <br>
+                        <div class="mdc-form-field">
+                          <div class="mdc-radio">
+                            <input class="mdc-radio__native-control" type="radio" id="radio-language__first2" name="radio-language__first">
+                            <div class="mdc-radio__background">
+                              <div class="mdc-radio__outer-circle"></div>
+                              <div class="mdc-radio__inner-circle"></div>
+                            </div>
+                          </div>
+                          <label for="radio-language__first2">French</label>
+                        </div>
+                        <br>
+                        <div class="mdc-form-field">
+                          <div class="mdc-radio">
+                            <input class="mdc-radio__native-control" type="radio" id="radio-language__first3" name="radio-language__first">
+                            <div class="mdc-radio__background">
+                              <div class="mdc-radio__outer-circle"></div>
+                              <div class="mdc-radio__inner-circle"></div>
+                            </div>
+                          </div>
+                          <div class="mdc-text-field intl-field">
+                            <input type="text" id="textfield-language__other" class="mdc-text-field__input">
+                            <label class="mdc-floating-label" for="textfield-language__other">Other</label>
+                            <div class="mdc-line-ripple"></div>
+                          </div>
+                          <p class="mdc-text-field-helper-text" aria-hidden="true"></p>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                  <label for="radio-language__principal1">English</label>
-                </div>
-                <br>
-                <div class="mdc-form-field">
-                  <div class="mdc-radio">
-                    <input class="mdc-radio__native-control" type="radio" id="radio-language__principal2" name="radio-language__principal">
-                    <div class="mdc-radio__background">
-                      <div class="mdc-radio__outer-circle"></div>
-                      <div class="mdc-radio__inner-circle"></div>
+                </form>
+              </section>
+            </td>
+            <!-- Personal information page END -->
+
+            <!-- Program selection page, step 2 -->
+            <td>
+              <section data-step="1" class="animated-section">
+                <form id="form-step-1" action="javascript:void(0);" novalidate>
+
+                  <h1 class="mdc-typography--headline4 indent">Program selection and language prerequisites</h1>
+                  <div class="mdc-layout-grid intl-grid">
+                    <div class="mdc-layout-grid__inner">
+                      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
+                        <h1 class="mdc-typography--subtitle1">Program Selection</h1>
+                        <div class="divider"></div>
+                      </div>
+                      <!-- Country field TYPE: SELECT, REQUIRED -->
+                      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
+                        <div class="mdc-layout-grid__inner">
+                          <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
+                            <div class="mdc-select intl-field">
+                              <i class="mdc-select__dropdown-icon"></i>
+                              <select class="mdc-select__native-control" required>
+                                <option value="" disabled selected></option>
+                                <option value="canada">
+                                  Canada
+                                </option>
+                              </select>
+                              <label class="mdc-floating-label">First program of choice</label>
+                              <div class="mdc-line-ripple"></div>
+                            </div>
+                          </div>
+                          <div class="requirementsMet hidden mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
+                            <div class="mdc-select intl-field">
+                              <i class="mdc-select__dropdown-icon"></i>
+                              <select class="mdc-select__native-control requirementsMetInput" name="session-start__first" disabled="true" required>
+                                <option value="" disabled selected></option>
+                                <option value="canada">
+                                  Canada
+                                </option>
+                              </select>
+                              <label class="mdc-floating-label">First program start session</label>
+                              <div class="mdc-line-ripple"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
+                        <div class="mdc-layout-grid__inner">
+                          <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
+                            <div class="mdc-select intl-field">
+                              <i class="mdc-select__dropdown-icon"></i>
+                              <select class="mdc-select__native-control" required>
+                                <option value="" disabled selected></option>
+                                <option value="canada">
+                                  Canada
+                                </option>
+                              </select>
+                              <label class="mdc-floating-label">Second program of choice</label>
+                              <div class="mdc-line-ripple"></div>
+                            </div>
+                          </div>
+                          <div class="requirementsMet hidden mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
+                            <div class="mdc-select intl-field">
+                              <i class="mdc-select__dropdown-icon"></i>
+                              <select class="mdc-select__native-control requirementsMetInput" name="session-start__second" disabled="true" required>
+                                <option value="" disabled selected></option>
+                                <option value="canada">
+                                  Canada
+                                </option>
+                              </select>
+                              <label class="mdc-floating-label">Second program start session</label>
+                              <div class="mdc-line-ripple"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mdc-layout-grid__inner">
+                      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
+                        <h1 class="mdc-typography--subtitle1">Language prerequisites</h1>
+                        <div class="divider"></div>
+                      </div>
+                      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
+                        <button class="mdc-button mdc-button--raised openDialog" style="z-index: 4;">
+                          Click to check requirements
+                        </button>
+                        <input class="requirementsMetYes" type="radio" name="requirements" value="yes" style="position: relative; left: -155px; top: 10px; z-index: 1;" required>
+                        <input class="requirementsMetNo" type="radio" name="requirements" value="no" style="position: relative; left: -155px; top: 10px; z-index: 1;">
+                      </div>
+                      <div class="requirementsNotMet hidden mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
+                        <blockquote>
+                          <p class="mdc-typography--body2">Because academic requirements of the program are not met, and you do not have the required language skills to take an English-language or bilingual program, Laurentian University may offer
+                            you admission on the condition that you take the English for Academic Preparation (EAP) program. For more information on the EAP program, please visit <a href="https://laurentian.ca/laurentian-english-language-institute/programs"
+                              target="_blank">here</a>
+                            <br>Language competency tests in French must be taken through recognized institutions external to Laurentian University that are duly authorized to administer such tests.</p>
+                        </blockquote>
+                      </div>
+                      <div class="requirementsNotMet hidden mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
+                        <div class="mdc-select intl-field">
+                          <i class="mdc-select__dropdown-icon"></i>
+                          <select class="mdc-select__native-control requirementsNotMetInput" name="eap" disabled="true" required>
+                            <option value="" disabled selected></option>
+                            <option value="2019W">Winter 2019</option>
+                            <option value="2019SP">Spring 2019</option>
+                            <option value="2019F">Fall 2019</option>
+                            <option value="2020W">Winter 2020</option>
+                            <option value="2020SP">Spring 2020</option>
+                            <option value="2020F">Fall 2020</option>
+                          </select>
+                          <label class="mdc-floating-label">When would you like to begin the EAP program?</label>
+                          <div class="mdc-line-ripple"></div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </form>
+              </section>
+            </td>
+            <!-- Program selection page END -->
+
+            <!-- High school page, step 3 -->
+            <td>
+              <section data-step="2" class="animated-section">
+                <form id="form-step-2" action="javascript:void(0);" novalidate>
+                  <button class="mdc-fab removeHighSchool" style="float: right; position: relative; right: 20px; bottom: 6px;" aria-label="RemoveSchool" >
+                    <span class="mdc-fab__icon material-icons">delete</span>
+                  </button>
+                  <button class="mdc-fab addHighSchool" style="float: right; position: relative; right: 25px; bottom: 6px;" aria-label="AddSchool" data-school="1">
+                    <span class="mdc-fab__icon material-icons">add</span>
+                  </button>
+
+                  <h1 class="mdc-typography--headline4 indent">Secondary schools attended</h1>
+
+                  <div class="mdc-layout-grid intl-grid">
+                    <div class="mdc-layout-grid__inner highschool--3 animSchool hide" style="display: none;">
+                      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-8-tablet">
+                        <div class="mdc-card mdc-card--outlined">
+                          <div style="padding: 20px;">
+                            <div class="mdc-typography--headline4">Secondary school 3</div>
+                            <br>
+                            <div class="mdc-layout-grid__inner">
+                              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-8-tablet">
+                                <div class="mdc-text-field intl-field">
+                                  <input type="text" id="highscool-name--3" class="mdc-text-field__input initSchoolInputs" required>
+                                  <label class="mdc-floating-label" for="highscool-name--3">School name</label>
+                                  <div class="mdc-line-ripple"></div>
+                                </div>
+                              </div>
+                              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-8-tablet">
+                                <div class="mdc-text-field mdc-text-field--textarea ">
+                                  <textarea id="school-address--3" class="mdc-text-field__input initSchoolInputs" rows="4" style="resize: none;" cols="40"></textarea>
+                                  <label for="school-address--3" class="mdc-floating-label">School address (Optional)</label>
+                                </div>
+                              </div>
+                              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-tablet">
+                                <div class="mdc-select intl-field">
+                                  <i class="mdc-select__dropdown-icon"></i>
+                                  <select class="mdc-select__native-control initSchoolInputs" name="highschool-startyear--3" required>
+                                    <option value="" disabled selected></option>
+                                    <option value="2019W">Winter 2019</option>
+                                    <option value="2019SP">Spring 2019</option>
+                                    <option value="2019F">Fall 2019</option>
+                                    <option value="2020W">Winter 2020</option>
+                                    <option value="2020SP">Spring 2020</option>
+                                    <option value="2020F">Fall 2020</option>s
+                                  </select>
+                                  <label class="mdc-floating-label">Start Year</label>
+                                  <div class="mdc-line-ripple"></div>
+                                </div>
+                              </div>
+                              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-tablet">
+                                <div class="mdc-select intl-field">
+                                  <i class="mdc-select__dropdown-icon"></i>
+                                  <select class="mdc-select__native-control initSchoolInputs" name="highschool-endyear--3"  required>
+                                    <option value="" disabled selected></option>
+                                    <option value="2019W">Winter 2019</option>
+                                    <option value="2019SP">Spring 2019</option>
+                                    <option value="2019F">Fall 2019</option>
+                                    <option value="2020W">Winter 2020</option>
+                                    <option value="2020SP">Spring 2020</option>
+                                    <option value="2020F">Fall 2020</option>
+                                  </select>
+                                  <label class="mdc-floating-label">End Year</label>
+                                  <div class="mdc-line-ripple"></div>
+                                </div>
+                              </div>
+                            </div>
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <br>
+                    <div class="mdc-layout-grid__inner highschool--2 animSchool hide" style="display: none;">
+                      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-8-tablet">
+                        <div class="mdc-card mdc-card--outlined">
+                          <div style="padding: 20px;">
+                            <div class="mdc-typography--headline4">Secondary school 2</div>
+                            <br>
+                            <div class="mdc-layout-grid__inner">
+                              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-8-tablet">
+                                <div class="mdc-text-field intl-field">
+                                  <input type="text" id="highscool-name--2" class="mdc-text-field__input initSchoolInputs" required>
+                                  <label class="mdc-floating-label" for="highscool-name--2">School name</label>
+                                  <div class="mdc-line-ripple"></div>
+                                </div>
+                              </div>
+                              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-8-tablet">
+                                <div class="mdc-text-field mdc-text-field--textarea">
+                                  <textarea id="school-address--2" class="mdc-text-field__input initSchoolInputs" rows="4" style="resize: none;" cols="40"></textarea>
+                                  <label for="school-address--2" class="mdc-floating-label">School address (Optional)</label>
+                                </div>
+                              </div>
+                              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-tablet">
+                                <div class="mdc-select intl-field">
+                                  <i class="mdc-select__dropdown-icon"></i>
+                                  <select class="mdc-select__native-control initSchoolInputs" name="highschool-startyear--2" required>
+                                    <option value="" disabled selected></option>
+                                    <option value="2019W">Winter 2019</option>
+                                    <option value="2019SP">Spring 2019</option>
+                                    <option value="2019F">Fall 2019</option>
+                                    <option value="2020W">Winter 2020</option>
+                                    <option value="2020SP">Spring 2020</option>
+                                    <option value="2020F">Fall 2020</option>s
+                                  </select>
+                                  <label class="mdc-floating-label">Start Year</label>
+                                  <div class="mdc-line-ripple"></div>
+                                </div>
+                              </div>
+                              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-tablet">
+                                <div class="mdc-select intl-field">
+                                  <i class="mdc-select__dropdown-icon"></i>
+                                  <select class="mdc-select__native-control initSchoolInputs" name="highschool-endyear--2"  required>
+                                    <option value="" disabled selected></option>
+                                    <option value="2019W">Winter 2019</option>
+                                    <option value="2019SP">Spring 2019</option>
+                                    <option value="2019F">Fall 2019</option>
+                                    <option value="2020W">Winter 2020</option>
+                                    <option value="2020SP">Spring 2020</option>
+                                    <option value="2020F">Fall 2020</option>
+                                  </select>
+                                  <label class="mdc-floating-label">End Year</label>
+                                  <div class="mdc-line-ripple"></div>
+                                </div>
+                              </div>
+                            </div>
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <br>
+                    <div class="mdc-layout-grid__inner">
+                      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-8-tablet">
+                        <div class="mdc-card mdc-card--outlined">
+                          <div style="padding: 20px;">
+                            <div class="mdc-typography--headline4">Secondary school 1</div>
+                            <br>
+                            <div class="mdc-layout-grid__inner">
+                              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-8-tablet">
+                                <div class="mdc-text-field intl-field">
+                                  <input type="text" id="highscool-name" class="mdc-text-field__input" required>
+                                  <label class="mdc-floating-label" for="highscool-name">School name</label>
+                                  <div class="mdc-line-ripple"></div>
+                                </div>
+                              </div>
+                              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-8-tablet">
+                                <div class="mdc-text-field mdc-text-field--textarea">
+                                  <textarea id="school-address--1" class="mdc-text-field__input" rows="4" style="resize: none;" cols="40"></textarea>
+                                  <label for="school-address--1" class="mdc-floating-label">School address (Optional)</label>
+                                </div>
+                              </div>
+                              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-tablet">
+                                <div class="mdc-select intl-field">
+                                  <i class="mdc-select__dropdown-icon"></i>
+                                  <select class="mdc-select__native-control" name="highschool-startyear--1" required>
+                                    <option value="" disabled selected></option>
+                                    <option value="2019W">Winter 2019</option>
+                                    <option value="2019SP">Spring 2019</option>
+                                    <option value="2019F">Fall 2019</option>
+                                    <option value="2020W">Winter 2020</option>
+                                    <option value="2020SP">Spring 2020</option>
+                                    <option value="2020F">Fall 2020</option>s
+                                  </select>
+                                  <label class="mdc-floating-label">Start Year</label>
+                                  <div class="mdc-line-ripple"></div>
+                                </div>
+                              </div>
+                              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-tablet">
+                                <div class="mdc-select intl-field">
+                                  <i class="mdc-select__dropdown-icon"></i>
+                                  <select class="mdc-select__native-control" name="highschool-endyear--1"  required>
+                                    <option value="" disabled selected></option>
+                                    <option value="2019W">Winter 2019</option>
+                                    <option value="2019SP">Spring 2019</option>
+                                    <option value="2019F">Fall 2019</option>
+                                    <option value="2020W">Winter 2020</option>
+                                    <option value="2020SP">Spring 2020</option>
+                                    <option value="2020F">Fall 2020</option>
+                                  </select>
+                                  <label class="mdc-floating-label">End Year</label>
+                                  <div class="mdc-line-ripple"></div>
+                                </div>
+                              </div>
+                            </div>
+
+                          </div>
+
+                        </div>
+                      </div>
                     </div>
                   </div>
-                  <label for="radio-language__principal2">French</label>
-                </div>
-              </div>
-              <!-- First language field TYPE: RADIO, REQUIRED -->
-              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
-                <h1 class="mdc-typography--subtitle2">First language</h1>
-                <div class="mdc-form-field">
-                  <div class="mdc-radio">
-                    <input class="mdc-radio__native-control" type="radio" id="radio-language__first1" name="radio-language__first" checked required>
-                    <div class="mdc-radio__background">
-                      <div class="mdc-radio__outer-circle"></div>
-                      <div class="mdc-radio__inner-circle"></div>
+                </form>
+              </section>
+            </td>
+            <!-- High school page END -->
+
+            <!-- Post-Secondary page, step 4 -->
+            <td>
+              <section data-step="3" class="animated-section">
+                <form id="form-step-3" action="javascript:void(0);" novalidate>
+                  <button class="mdc-fab removePostsecondarySchool animSchool psButton" style="float: right; position: relative; right: 20px; bottom: 6px; transform: scale(0);" aria-label="RemoveSchool" >
+                    <span class="mdc-fab__icon material-icons">delete</span>
+                  </button>
+                  <button class="mdc-fab addPostsecondarySchool animSchool psButton" style="float: right; position: relative; right: 25px; bottom: 6px; transform: scale(0);" aria-label="AddSchool" data-school="1">
+                    <span class="mdc-fab__icon material-icons">add</span>
+                  </button>
+
+                  <h1 class="mdc-typography--headline4 indent">Postsecondary education</h1>
+
+                  <div class="mdc-layout-grid intl-grid">
+                    <div class="mdc-layout-grid__inner">
+                      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
+                        <h1 class="mdc-typography--subtitle2">Have you already attended a postsecondary institution? If so, your prior learning may be recognized.</h1>
+                        <div class="mdc-form-field">
+                          <div class="mdc-radio">
+                            <input class="mdc-radio__native-control attened-ps__yes" type="radio" id="radio-ps--attened__yes" name="radio-ps--attened"  required>
+                            <div class="mdc-radio__background">
+                              <div class="mdc-radio__outer-circle"></div>
+                              <div class="mdc-radio__inner-circle"></div>
+                            </div>
+                          </div>
+                          <label for="radio-ps--attened__yes">Yes</label>
+                        </div>
+                        <br>
+                        <div class="mdc-form-field">
+                          <div class="mdc-radio">
+                            <input class="mdc-radio__native-control attened-ps__no" type="radio" id="radio-ps--attened__no" name="radio-ps--attened" checked>
+                            <div class="mdc-radio__background">
+                              <div class="mdc-radio__outer-circle"></div>
+                              <div class="mdc-radio__inner-circle"></div>
+                            </div>
+                          </div>
+                          <label for="radio-ps--attened__no">No</label>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                  <label for="radio-language__first1">English</label>
-                </div>
-                <br>
-                <div class="mdc-form-field">
-                  <div class="mdc-radio">
-                    <input class="mdc-radio__native-control" type="radio" id="radio-language__first2" name="radio-language__first">
-                    <div class="mdc-radio__background">
-                      <div class="mdc-radio__outer-circle"></div>
-                      <div class="mdc-radio__inner-circle"></div>
+                    <section class="ps-section animSchool" style="display: none;">
+                    <div class="mdc-layout-grid__inner postsecondary--3 ps animSchool hide" style="display: none;">
+                      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-8-tablet">
+                        <div class="mdc-card mdc-card--outlined">
+                          <div style="padding: 20px;">
+                            <div class="mdc-typography--headline4">Postsecondary school 3</div>
+                            <br>
+                            <div class="mdc-layout-grid__inner">
+                              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-8-tablet">
+                                <div class="mdc-text-field intl-field">
+                                  <input type="text" id="postsecondary-name--3" class="mdc-text-field__input initSchoolInputs" required>
+                                  <label class="mdc-floating-label" for="postsecondary-name--3">School name</label>
+                                  <div class="mdc-line-ripple"></div>
+                                </div>
+                              </div>
+                              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-8-tablet">
+                                <div class="mdc-text-field mdc-text-field--textarea ">
+                                  <textarea id="postsecondary-address--3" class="mdc-text-field__input initSchoolInputs" rows="4" style="resize: none;" cols="40"></textarea>
+                                  <label for="postsecondary-address--3" class="mdc-floating-label">School address (Optional)</label>
+                                </div>
+                              </div>
+                              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-tablet">
+                                <div class="mdc-select intl-field">
+                                  <i class="mdc-select__dropdown-icon"></i>
+                                  <select class="mdc-select__native-control initSchoolInputs" name="postsecondary-startyear--3" required>
+                                    <option value="" disabled selected></option>
+                                    <option value="2019W">Winter 2019</option>
+                                    <option value="2019SP">Spring 2019</option>
+                                    <option value="2019F">Fall 2019</option>
+                                    <option value="2020W">Winter 2020</option>
+                                    <option value="2020SP">Spring 2020</option>
+                                    <option value="2020F">Fall 2020</option>s
+                                  </select>
+                                  <label class="mdc-floating-label">Start Year</label>
+                                  <div class="mdc-line-ripple"></div>
+                                </div>
+                              </div>
+                              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-tablet">
+                                <div class="mdc-select intl-field">
+                                  <i class="mdc-select__dropdown-icon"></i>
+                                  <select class="mdc-select__native-control initSchoolInputs" name="postsecondary-endyear--3"  required>
+                                    <option value="" disabled selected></option>
+                                    <option value="2019W">Winter 2019</option>
+                                    <option value="2019SP">Spring 2019</option>
+                                    <option value="2019F">Fall 2019</option>
+                                    <option value="2020W">Winter 2020</option>
+                                    <option value="2020SP">Spring 2020</option>
+                                    <option value="2020F">Fall 2020</option>
+                                  </select>
+                                  <label class="mdc-floating-label">End Year</label>
+                                  <div class="mdc-line-ripple"></div>
+                                </div>
+                              </div>
+                            </div>
+
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                  <label for="radio-language__first2">French</label>
-                </div>
-                <br>
-                <div class="mdc-form-field">
-                  <div class="mdc-radio">
-                    <input class="mdc-radio__native-control" type="radio" id="radio-language__first3" name="radio-language__first">
-                    <div class="mdc-radio__background">
-                      <div class="mdc-radio__outer-circle"></div>
-                      <div class="mdc-radio__inner-circle"></div>
+                    <br>
+                    <div class="mdc-layout-grid__inner postsecondary--2 ps animSchool hide" style="display: none;">
+                      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-8-tablet">
+                        <div class="mdc-card mdc-card--outlined">
+                          <div style="padding: 20px;">
+                            <div class="mdc-typography--headline4">Postsecondary school 2</div>
+                            <br>
+                            <div class="mdc-layout-grid__inner">
+                              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-8-tablet">
+                                <div class="mdc-text-field intl-field">
+                                  <input type="text" id="postsecondary-name--2" class="mdc-text-field__input initSchoolInputs" required>
+                                  <label class="mdc-floating-label" for="postsecondary-name--2">School name</label>
+                                  <div class="mdc-line-ripple"></div>
+                                </div>
+                              </div>
+                              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-8-tablet">
+                                <div class="mdc-text-field mdc-text-field--textarea">
+                                  <textarea id="postsecondary-address--2" class="mdc-text-field__input initSchoolInputs" rows="4" style="resize: none;" cols="40"></textarea>
+                                  <label for="postsecondary-address--2" class="mdc-floating-label">School address (Optional)</label>
+                                </div>
+                              </div>
+                              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-tablet">
+                                <div class="mdc-select intl-field">
+                                  <i class="mdc-select__dropdown-icon"></i>
+                                  <select class="mdc-select__native-control initSchoolInputs" name="postsecondary-startyear--2" required>
+                                    <option value="" disabled selected></option>
+                                    <option value="2019W">Winter 2019</option>
+                                    <option value="2019SP">Spring 2019</option>
+                                    <option value="2019F">Fall 2019</option>
+                                    <option value="2020W">Winter 2020</option>
+                                    <option value="2020SP">Spring 2020</option>
+                                    <option value="2020F">Fall 2020</option>s
+                                  </select>
+                                  <label class="mdc-floating-label">Start Year</label>
+                                  <div class="mdc-line-ripple"></div>
+                                </div>
+                              </div>
+                              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-tablet">
+                                <div class="mdc-select intl-field">
+                                  <i class="mdc-select__dropdown-icon"></i>
+                                  <select class="mdc-select__native-control initSchoolInputs" name="postsecondary-endyear--2"  required>
+                                    <option value="" disabled selected></option>
+                                    <option value="2019W">Winter 2019</option>
+                                    <option value="2019SP">Spring 2019</option>
+                                    <option value="2019F">Fall 2019</option>
+                                    <option value="2020W">Winter 2020</option>
+                                    <option value="2020SP">Spring 2020</option>
+                                    <option value="2020F">Fall 2020</option>
+                                  </select>
+                                  <label class="mdc-floating-label">End Year</label>
+                                  <div class="mdc-line-ripple"></div>
+                                </div>
+                              </div>
+                            </div>
+
+                          </div>
+                        </div>
+                      </div>
                     </div>
+                    <br>
+                    <div class="mdc-layout-grid__inner postsecondary--1">
+                      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-8-tablet">
+                        <div class="mdc-card mdc-card--outlined">
+                          <div style="padding: 20px;">
+                            <div class="mdc-typography--headline4">Postsecondary school 1</div>
+                            <br>
+                            <div class="mdc-layout-grid__inner">
+                              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-8-tablet">
+                                <div class="mdc-text-field intl-field">
+                                  <input type="text" id="postsecondary-name" class="mdc-text-field__input initSchoolInputs" required>
+                                  <label class="mdc-floating-label" for="postsecondary-name">School name</label>
+                                  <div class="mdc-line-ripple"></div>
+                                </div>
+                              </div>
+                              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-8-tablet">
+                                <div class="mdc-text-field mdc-text-field--textarea">
+                                  <textarea id="postsecondary-address--1" class="mdc-text-field__input initSchoolInputs" rows="4" style="resize: none;" cols="40"></textarea>
+                                  <label for="postsecondary-address--1" class="mdc-floating-label">School address (Optional)</label>
+                                </div>
+                              </div>
+                              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-tablet">
+                                <div class="mdc-select intl-field">
+                                  <i class="mdc-select__dropdown-icon"></i>
+                                  <select class="mdc-select__native-control initSchoolInputs" name="postsecondary-startyear--1" required>
+                                    <option value="" disabled selected></option>
+                                    <option value="2019W">Winter 2019</option>
+                                    <option value="2019SP">Spring 2019</option>
+                                    <option value="2019F">Fall 2019</option>
+                                    <option value="2020W">Winter 2020</option>
+                                    <option value="2020SP">Spring 2020</option>
+                                    <option value="2020F">Fall 2020</option>s
+                                  </select>
+                                  <label class="mdc-floating-label">Start Year</label>
+                                  <div class="mdc-line-ripple"></div>
+                                </div>
+                              </div>
+                              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-tablet">
+                                <div class="mdc-select intl-field">
+                                  <i class="mdc-select__dropdown-icon"></i>
+                                  <select class="mdc-select__native-control initSchoolInputs" name="postsecondary-endyear--1"  required>
+                                    <option value="" disabled selected></option>
+                                    <option value="2019W">Winter 2019</option>
+                                    <option value="2019SP">Spring 2019</option>
+                                    <option value="2019F">Fall 2019</option>
+                                    <option value="2020W">Winter 2020</option>
+                                    <option value="2020SP">Spring 2020</option>
+                                    <option value="2020F">Fall 2020</option>
+                                  </select>
+                                  <label class="mdc-floating-label">End Year</label>
+                                  <div class="mdc-line-ripple"></div>
+                                </div>
+                              </div>
+                            </div>
+
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    </section>
                   </div>
-                  <div class="mdc-text-field intl-field">
-                    <input type="text" id="textfield-language__other" class="mdc-text-field__input">
-                    <label class="mdc-floating-label" for="textfield-language__other">Other</label>
-                    <div class="mdc-line-ripple"></div>
-                  </div>
-                  <p class="mdc-text-field-helper-text" aria-hidden="true"></p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </form>
-      </section>
-    </td>
-      <!-- Personal information page END -->
+                </form>
+              </section>
+            </td>
+            <!-- Post-Secondary page END -->
 
-      <!-- Program selection page, step 2 -->
-      <td>
-      <section data-step="1" class="animated-section">
-        <h1 class="mdc-typography--headline4 indent">Personal Information</h1>
-        <div class="mdc-layout-grid intl-grid">
-          <div class="mdc-layout-grid__inner">
-            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
-              <!-- First name field TYPE: TEXT, REQUIRED-->
-              <div class="mdc-text-field intl-field">
-                <input type="text" id="textfield-firstname" class="mdc-text-field__input">
-                <label class="mdc-floating-label" for="textfield-firstname">First Name</label>
-                <div class="mdc-line-ripple"></div>
-              </div>
-              <p class="mdc-text-field-helper-text" aria-hidden="true">All legal given names</p>
-            </div>
-            <!-- Middle name field TYPE: TEXT -->
-            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
-              <div class="mdc-text-field intl-field">
-                <input type="text" id="textfield-middlename" class="mdc-text-field__input">
-                <label class="mdc-floating-label" for="textfield-middlename">Middle Name</label>
-                <div class="mdc-line-ripple"></div>
-              </div>
-              <p class="mdc-text-field-helper-text" aria-hidden="true">All legal middle names</p>
-            </div>
-            <!-- Family name field TYPE: TEXT, REQUIRED-->
-            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
-              <div class="mdc-text-field intl-field">
-                <input type="text" id="textfield-familyname" class="mdc-text-field__input">
-                <label class="mdc-floating-label" for="textfield-familyname">Family Name</label>
-                <div class="mdc-line-ripple"></div>
-              </div>
-              <p class="mdc-text-field-helper-text" aria-hidden="true">All Legal last name</p>
-            </div>
-            <!-- Former name field TYPE: TEXT -->
-            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
-              <div class="mdc-text-field intl-field">
-                <input type="text" id="textfield-formername" class="mdc-text-field__input">
-                <label class="mdc-floating-label" for="textfield-formername">Former Name</label>
-                <div class="mdc-line-ripple"></div>
-              </div>
-              <p class="mdc-text-field-helper-text" aria-hidden="true">if applicable</p>
-            </div>
-            <!-- Date of birth field TYPE: DATE, REQUIRED -->
-            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
-              <div class="mdc-text-field intl-field">
-                <input type="date" id="textfield-dob" class="mdc-text-field__input">
-                <label class="mdc-floating-label" for="textfield-dob">Date of birth</label>
-                <div class="mdc-line-ripple"></div>
-              </div>
-              <p class="mdc-text-field-helper-text" aria-hidden="true"></p>
-            </div>
-            <!-- Gender field TYPE: SELECT, REQUIRED-->
-            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
-              <div class="mdc-select intl-field">
-                <i class="mdc-select__dropdown-icon"></i>
-                <select class="mdc-select__native-control">
-                  <option value="" disabled selected></option>
-                  <option value="female">
-                    Female
-                  </option>
-                  <option value="male">
-                    Male
-                  </option>
-                  <option value="other">
-                    Other
-                  </option>
-                </select>
-                <label class="mdc-floating-label">Gender</label>
-                <div class="mdc-line-ripple"></div>
-              </div>
-            </div>
-          </div>
-          <!-- Telephone Section -->
-          <div class="mdc-layout-grid__inner">
-            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
-              <h1 class="mdc-typography--subtitle1">Telephone</h1>
-              <div class="divider"></div>
-            </div>
-            <!-- Phone primary field TYPE: TEL, REQUIRED -->
-            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
-              <div class="mdc-text-field intl-field">
-                <input type="tel" id="textfield-telprimary" class="mdc-text-field__input">
-                <label class="mdc-floating-label" for="textfield-telprimary">Phone (primary)</label>
-                <div class="mdc-line-ripple"></div>
-              </div>
-              <p class="mdc-text-field-helper-text" aria-hidden="true">Home / Mobile</p>
-            </div>
-            <!-- Phone work field TYPE: TEL -->
-            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
-              <div class="mdc-text-field intl-field">
-                <input type="tel" id="textfield-telwork" class="mdc-text-field__input">
-                <label class="mdc-floating-label" for="textfield-telwork">Phone (work)</label>
-                <div class="mdc-line-ripple"></div>
-              </div>
-              <p class="mdc-text-field-helper-text" aria-hidden="true">Business / Company</p>
-            </div>
-          </div>
-          <!-- Address section -->
-          <div class="mdc-layout-grid__inner">
-            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
-              <h1 class="mdc-typography--subtitle1">Address</h1>
-              <div class="divider"></div>
-            </div>
-            <!-- Address line 1 field TYPE: TEXT, REQUIRED -->
-            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
-              <div class="mdc-text-field intl-field">
-                <input type="text" id="textfield-address__line1" class="mdc-text-field__input">
-                <label class="mdc-floating-label" for="textfield-address__line1">Address Line 1</label>
-                <div class="mdc-line-ripple"></div>
-              </div>
-              <p class="mdc-text-field-helper-text" aria-hidden="true">Street number, P.O box, Suit Number</p>
-            </div>
-            <!-- Address line 2 field TYPE: TEXT -->
-            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
-              <div class="mdc-text-field intl-field">
-                <input type="text" id="textfield-address__line2" class="mdc-text-field__input">
-                <label class="mdc-floating-label" for="textfield-address__line2">Address Line 2</label>
-                <div class="mdc-line-ripple"></div>
-              </div>
-              <p class="mdc-text-field-helper-text" aria-hidden="true">Street number, P.O box, Suit Number</p>
-            </div>
-            <!-- City field TYPE: TEXT, REQUIRED -->
-            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
-              <div class="mdc-text-field intl-field">
-                <input type="text" id="textfield-address__city" class="mdc-text-field__input">
-                <label class="mdc-floating-label" for="textfield-address__city">City</label>
-                <div class="mdc-line-ripple"></div>
-              </div>
-              <p class="mdc-text-field-helper-text" aria-hidden="true"></p>
-            </div>
-            <!-- State field TYPE: TEXT, REQUIRED -->
-            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
-              <div class="mdc-text-field intl-field">
-                <input type="text" id="textfield-address__state" class="mdc-text-field__input">
-                <label class="mdc-floating-label" for="textfield-address__state">State / Province / Region</label>
-                <div class="mdc-line-ripple"></div>
-              </div>
-              <p class="mdc-text-field-helper-text" aria-hidden="true"></p>
-            </div>
-            <!-- Postal code field TYPE: TEXT, REQUIRED -->
-            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
-              <div class="mdc-text-field intl-field">
-                <input type="text" id="textfield-address__zip" class="mdc-text-field__input">
-                <label class="mdc-floating-label" for="textfield-address__zip">Postal Code / ZIP</label>
-                <div class="mdc-line-ripple"></div>
-              </div>
-              <p class="mdc-text-field-helper-text" aria-hidden="true"></p>
-            </div>
-            <!-- Country field TYPE: SELECT, REQUIRED -->
-            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
-              <div class="mdc-select intl-field">
-                <i class="mdc-select__dropdown-icon"></i>
-                <select class="mdc-select__native-control">
-                  <option value="" disabled selected></option>
-                  <option value="canada">
-                    Canada
-                  </option>
-                </select>
-                <label class="mdc-floating-label">Country</label>
-                <div class="mdc-line-ripple"></div>
-              </div>
-            </div>
-            <!-- Country of citizenship field TYPE: SELECT, REQUIRED -->
-            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-8-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
-              <div class="mdc-select intl-field">
-                <i class="mdc-select__dropdown-icon"></i>
-                <select class="mdc-select__native-control">
-                  <option value="" disabled selected></option>
-                  <option value="canada">
-                    Canada
-                  </option>
-                </select>
-                <label class="mdc-floating-label">Country of citizenship</label>
-                <div class="mdc-line-ripple"></div>
-              </div>
-              <p class="mdc-text-field-helper-text" aria-hidden="true"></p>
-            </div>
-          </div>
-          <div class="mdc-layout-grid__inner">
-            <!-- Email section -->
-            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
-              <h1 class="mdc-typography--subtitle1">Email information</h1>
-              <div class="divider"></div>
-            </div>
-            <!-- Email primary field TYPE: EMAIL, REQUIRED -->
-            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
-              <div class="mdc-text-field intl-field">
-                <input type="email" id="textfield-email__primary" class="mdc-text-field__input">
-                <label class="mdc-floating-label" for="textfield-email__primary">Email (Primary)</label>
-                <div class="mdc-line-ripple"></div>
-              </div>
-              <p class="mdc-text-field-helper-text" aria-hidden="true"></p>
-            </div>
-            <!-- Email secondary field TYPE: EMAIL -->
-            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
-              <div class="mdc-text-field intl-field">
-                <input type="email" id="textfield-email__secondary" class="mdc-text-field__input">
-                <label class="mdc-floating-label" for="textfield-email__secondary">Email (Secondary)</label>
-                <div class="mdc-line-ripple"></div>
-              </div>
-              <p class="mdc-text-field-helper-text" aria-hidden="true"></p>
-            </div>
-          </div>
-          <div class="mdc-layout-grid__inner">
-            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
-              <div class="divider"></div>
-            </div>
-            <!-- Highest level of Education field TYPE: SELECT, REQUIRED -->
-            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
-              <div class="mdc-select intl-field">
-                <i class="mdc-select__dropdown-icon"></i>
-                <select class="mdc-select__native-control">
-                  <option value="" disabled selected></option>
-                  <option value="highschool">
-                    High School
-                  </option>
-                  <option value="college">
-                    College Diploma
-                  </option>
-                  <option value="university">
-                    University Degree
-                  </option>
-                </select>
-                <label class="mdc-floating-label">Highest Level of Education</label>
-                <div class="mdc-line-ripple"></div>
-              </div>
-            </div>
-            <!-- Principal language of communication field TYPE: RADIO, REQUIRED -->
-            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
-              <h1 class="mdc-typography--subtitle2">Principal language of communication</h1>
-              <div class="mdc-form-field">
-                <div class="mdc-radio">
-                  <input class="mdc-radio__native-control" type="radio" id="radio-language__principal1" name="radio-language__principal" checked>
-                  <div class="mdc-radio__background">
-                    <div class="mdc-radio__outer-circle"></div>
-                    <div class="mdc-radio__inner-circle"></div>
-                  </div>
-                </div>
-                <label for="radio-language__principal1">English</label>
-              </div>
-              <br>
-              <div class="mdc-form-field">
-                <div class="mdc-radio">
-                  <input class="mdc-radio__native-control" type="radio" id="radio-language__principal2" name="radio-language__principal">
-                  <div class="mdc-radio__background">
-                    <div class="mdc-radio__outer-circle"></div>
-                    <div class="mdc-radio__inner-circle"></div>
-                  </div>
-                </div>
-                <label for="radio-language__principal2">French</label>
-              </div>
-            </div>
-            <!-- First language field TYPE: RADIO, REQUIRED -->
-            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
-              <h1 class="mdc-typography--subtitle2">First language</h1>
-              <div class="mdc-form-field">
-                <div class="mdc-radio">
-                  <input class="mdc-radio__native-control" type="radio" id="radio-language__first1" name="radio-language__first" checked>
-                  <div class="mdc-radio__background">
-                    <div class="mdc-radio__outer-circle"></div>
-                    <div class="mdc-radio__inner-circle"></div>
-                  </div>
-                </div>
-                <label for="radio-language__first1">English</label>
-              </div>
-              <br>
-              <div class="mdc-form-field">
-                <div class="mdc-radio">
-                  <input class="mdc-radio__native-control" type="radio" id="radio-language__first2" name="radio-language__first">
-                  <div class="mdc-radio__background">
-                    <div class="mdc-radio__outer-circle"></div>
-                    <div class="mdc-radio__inner-circle"></div>
-                  </div>
-                </div>
-                <label for="radio-language__first2">French</label>
-              </div>
-              <br>
-              <div class="mdc-form-field">
-                <div class="mdc-radio">
-                  <input class="mdc-radio__native-control" type="radio" id="radio-language__first3" name="radio-language__first">
-                  <div class="mdc-radio__background">
-                    <div class="mdc-radio__outer-circle"></div>
-                    <div class="mdc-radio__inner-circle"></div>
-                  </div>
-                </div>
-                <div class="mdc-text-field intl-field">
-                  <input type="text" id="textfield-language__other" class="mdc-text-field__input">
-                  <label class="mdc-floating-label" for="textfield-language__other">Other</label>
-                  <div class="mdc-line-ripple"></div>
-                </div>
-                <p class="mdc-text-field-helper-text" aria-hidden="true"></p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </td>
-      <!-- Program selection page END -->
+            <!-- Payment page, step 5 -->
+            <td>
+              <section data-step="4" class="animated-section">
 
-      <!-- High school page, step 3 -->
-      <td>
-      <section data-step="2" class="animated-section">
+              </section>
+            </td>
+          </tr>
+        </tbody>
+      </table>
 
-      </section>
-    </td>
-      <!-- High school page END -->
-
-      <!-- Post-Secondary page, step 4 -->
-      <td>
-      <section data-step="3" class="animated-section">
-
-      </section>
-    </td>
-      <!-- Post-Secondary page END -->
-
-      <!-- Payment page, step 5 -->
-      <td>
-      <section data-step="4" class="animated-section">
-
-      </section>
-    </td>
-  </tr>
-</table>
-      <div class="divider">
-
-      </div>
-      <div class="mdc-card__actions" style="float: right;">
-        <div class="mdc-card__action-buttons" >
-          <section data-step="0" class="step">
-            <button type="submit" form="form-step-0" data-tostep="1" data-step="0" class="form-submit mdc-button mdc-card__action mdc-card__action--button">Next</button>
-          </section>
-          <section data-step="1" class="step hidden">
-            <button class="mdc-button mdc-card__action mdc-card__action--button">Previous</button>
-            <button class="mdc-button mdc-card__action mdc-card__action--button">Next</button>
-          </section>
-          <section data-step="2" class="step hidden">
-            <button class="mdc-button mdc-card__action mdc-card__action--button">Previous</button>
-            <button class="mdc-button mdc-card__action mdc-card__action--button">Next</button>
-          </section>
-          <section data-step="3" class="step hidden">
-            <button class="mdc-button mdc-card__action mdc-card__action--button">Previous</button>
-            <button class="mdc-button mdc-card__action mdc-card__action--button">Next</button>
-          </section>
-          <section data-step="4" class="step hidden">
-            <button class="mdc-button mdc-card__action mdc-card__action--button">Previous</button>
-            <button class="mdc-button mdc-card__action mdc-card__action--button">Pay</button>
-          </section>
-        </div>
-      </div>
       <!-- Payment page END -->
+      <div class="actionButtons">
+        <div class="divider"></div>
+        <div class="mdc-card__actions" style="float: right;">
+          <div class="mdc-card__action-buttons">
+            <section data-step="0" class="step">
+              <button type="submit" form="form-step-0" data-tostep="1" data-step="0" class="form-submit mdc-button mdc-card__action mdc-card__action--button">Next</button>
+            </section>
+            <section data-step="1" class="step hidden">
+              <button class="mdc-button mdc-card__action mdc-card__action--button">Previous</button>
+              <button type="submit" form="form-step-1" data-tostep="2" data-step="1" class="form-submit mdc-button mdc-card__action mdc-card__action--button">Next</button>
+            </section>
+            <section data-step="2" class="step hidden">
+              <button class="mdc-button mdc-card__action mdc-card__action--button">Previous</button>
+              <button type="submit" form="form-step-2" data-tostep="3" data-step="2" class="form-submit mdc-button mdc-card__action mdc-card__action--button">Next</button>
+            </section>
+            <section data-step="3" class="step hidden">
+              <button class="mdc-button mdc-card__action mdc-card__action--button">Previous</button>
+              <button class="mdc-button mdc-card__action mdc-card__action--button">Next</button>
+            </section>
+            <section data-step="4" class="step hidden">
+              <button class="mdc-button mdc-card__action mdc-card__action--button">Previous</button>
+              <button class="mdc-button mdc-card__action mdc-card__action--button">Pay</button>
+            </section>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="mdc-snackbar" aria-live="assertive" aria-atomic="true" aria-hidden="true">
+  <div class="mdc-snackbar mdc-snackbar--align-start" aria-live="assertive" aria-atomic="true" aria-hidden="true">
     <div class="mdc-snackbar__text"></div>
     <div class="mdc-snackbar__action-wrapper">
       <button type="button" class="mdc-snackbar__action-button"></button>
     </div>
   </div>
+  <div class="mdc-dialog" role="alertdialog" aria-modal="true" aria-labelledby="my-dialog-title" aria-describedby="my-dialog-content">
+    <div class="mdc-dialog__container">
+      <div class="mdc-dialog__surface">
+        <!-- Title cannot contain leading whitespace due to mdc-typography-baseline-top() -->
+        <h2 class="mdc-dialog__title" id="my-dialog-title">
+          <!--
+     -->Language prerequisites
+          <!--
+   -->
+        </h2>
+        <div class="mdc-dialog__content" id="my-dialog-content">
+          <h1 class="mdc-typography--subtitle2">For admission to a degree program, a student must meet one of the language requirements listed below in addition to the academic requirements:</h1>
+          <ul>
+            <li>Test of English as a Foreign Language (TOEFL) (minimum score: 230 computer-based, 88 Internet-based)</li>
+            <li>International English Language Testing System (IELTS - Academic)(6.5 minimum overall for direct academic entry with no band score lower than 6)</li>
+            <li>Michigan English Language Assessment Battery (MELAB) (minimum score: 80)</li>
+            <li>Canadian Academic English Language (CAEL) Assessment Test (minimum score: 70, with 60 in writing proficiency)</li>
+            <li>Cambridge English Proficiency (minimum result: C)</li>
+            <li>Cambridge Assessment English: C1 Advanced or C2 Proficiency with a Cambridge English Score of 176 or more. (replacement text).</li>
+            <li>Pearson Test of Academic English (PTE) (minimum score: 60)</li>
+            <li>Three years of full time senior-level studies in an English-language secondary school or postsecondary institution (official documents required) (evaluated on an individual basis; at the Admissions Committee's discretion)</li>
+            <li>Laurentian EAP Level 3 exam with a score of 70% or higher</li>
+          </ul>
+          <h1 class="mdc-typography--subtitle2">To be admitted to a program offered in French or a bilingual program, a student must meet one of the following criteria:</h1>
+          <ul>
+            <li>Three years of full-time study in a high school or postsecondary institution where French is the language of instruction (documentation must be provided by the student)</li>
+            <li>A minimum grade of B-2 (intermediate-advanced) on the Test de connaissance du français (TCF), version for prospective students</li>
+            <li>A minimum score of 14/20 (B2) at the written component of the Test d'évaluation du français (TEF)</li>
+            <li>A minimum score of 750 (out of 990) on the Test du français international (TFI)</li>
+          </ul>
+        </div>
+        <footer class="mdc-dialog__actions">
+          <span class="mdc-typography--overline">Do you meet the requirements?</span>
+          <button type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="no">No</button>
+          <button type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="yes">Yes</button>
+        </footer>
+      </div>
+    </div>
+    <div class="mdc-dialog__scrim"></div>
+  </div>
+
 </body>
 <script src="/assets/intl.bundle.js" async></script>
 

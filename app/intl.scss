@@ -1,6 +1,6 @@
 $mdc-theme-primary: #003e7e;
 $mdc-theme-secondary: #ffc423;
-$mdc-theme-on-primary: #442b2d;
+$mdc-theme-on-primary: #fff;
 $mdc-theme-on-secondary: #442b2d;
 
 
@@ -12,6 +12,8 @@ $mdc-theme-on-secondary: #442b2d;
   transform: translate(-50%);
 }
 table {
+  table-layout: fixed;
+  display: inline;
   margin: 0;
   padding: 0;
 }
@@ -19,7 +21,17 @@ td {
   margin: 0;
   padding: 0;
   position: relative;
-  left: -2px;
+  left: -3px;
+  vertical-align: top;
+}
+
+.formDisplay {
+  overflow-y: hidden;
+  transition: all 500ms $mdc-animation-standard-curve-timing-function;
+}
+.actionButtons {
+  transition: all 500ms $mdc-animation-standard-curve-timing-function;
+  position: relative;
 }
 
 
@@ -36,6 +48,17 @@ td {
 
 .intl-grid {
 
+}
+
+.animSchool {
+
+  transition: all 500ms $mdc-animation-standard-curve-timing-function;
+  &.show {
+    transform: scale(1);
+  }
+  &.hide {
+    transform: scale(0.001);
+  }
 }
 
 .move-row {
@@ -145,7 +168,12 @@ td {
 }
 
 html {
-
   margin: 0;
+
   background: linear-gradient(180deg, rgba(0,62,126,1) 0%, rgba(0,44,88,1) 100%);
+  background-size: fill;
+  background-repeat: no-repeat;
+}
+body {
+
 }
