@@ -6,6 +6,7 @@ module.exports = {
   },
   output: {
     filename: '[name].bundle.js',
+    path: "/Users/NicolasVenne/Development/international-website/dist/",
     publicPath: "/assets/"
   },
   module: {
@@ -40,8 +41,8 @@ module.exports = {
         query: {
           presets: ['es2015'],
           plugins: ['transform-object-assign']
-        },
-      }
+        }
+      },
     ],
   },
   devServer: {

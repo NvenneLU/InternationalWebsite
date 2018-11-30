@@ -332,6 +332,12 @@ document.querySelectorAll('.form-submit').forEach(button => {
   });
 });
 
+document.querySelectorAll('.previousBtn').forEach(btn => {
+  btn.addEventListener('click', function() {
+    tabBar.activateTab(btn.dataset.tostep);
+  })
+})
+
 document.querySelectorAll('.mdc-select').forEach(select => {
   new MDCSelect(select);
 });
