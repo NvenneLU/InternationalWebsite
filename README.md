@@ -7,6 +7,9 @@
 > Create new form with MDC  
 > Fix thankyou page and set success.php to update database
 
-### Development:
 
-Uses webpack to compile ES6 to ES5 and SCSS to CSS
+![](./intl3.png)
+
+![](./intl2.png)
+
+![](./intl1.png)
