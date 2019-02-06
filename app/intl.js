@@ -6,6 +6,8 @@ import {MDCSnackbar} from '@material/snackbar';
 import {MDCDialog} from '@material/dialog';
 import {MDCMenu} from '@material/menu';
 
+var formData = new FormData();
+
 const snackbar = new MDCSnackbar(document.querySelector('.mdc-snackbar'));
 function showMsg(msg) {
   const dataObj = {
@@ -52,31 +54,61 @@ function resize() {
 
 
 const tabBar = new MDCTabBar(document.querySelector('.mdc-tab-bar'));
-
+let override = false;
 let completedTab = [0,0,0,0,0];
 tabBar.listen('MDCTabBar:activated', function(event) {
 
   let nextTab = event.detail.index;
-  currentTab = nextTab;
-  let diff = (nextTab) * -1;
-  document.querySelector('.move-row').style.transform = "translateX(" + displaySize * diff + "px)";
-  var sectionHeight;
-  document.querySelectorAll('.animated-section').forEach(step => {
-    if(step.dataset.step == nextTab) {
-      sectionHeight = step.offsetHeight;
-      var tableHeight = document.querySelector('.table-height').offsetHeight;
-      document.querySelector('.formDisplay').style.height = sectionHeight + 80 + "px";
-      document.querySelector('.actionButtons').style.position = "relative";
-      document.querySelector('.actionButtons').style.bottom = tableHeight - sectionHeight - 24 + "px"
-    }
-  })
-  document.querySelectorAll('.step').forEach(step => {
-    if(step.dataset.step == nextTab) {
-      step.classList.remove("hidden");
+  console.log(currentTab + " " + nextTab);
+  if(currentTab > nextTab)  {
+    console.log("RUN");
+    override = true;
+    currentTab = nextTab;
+    tabBar.activateTab(nextTab);
+  }
+  if(checkValidity(currentTab) || override) {
+    if(!override) {
+      completedTab[currentTab] = 1;
+      if((currentTab - nextTab) * -1 != 1) {
+        for(let i = currentTab + 1; i <= nextTab - 1; i++) {
+          if(completedTab[i] != 1) {
+            override = true;
+            tabBar.activateTab(i);
+            return;
+          }
+        }
+        currentTab = nextTab;
+      } else {
+        currentTab = nextTab;
+      }
     } else {
-      step.classList.add("hidden");
+      console.log("override");
+      currentTab = nextTab;
+      override = false;
     }
-  })
+
+    document.querySelector('.move-row').style.transform = "translateX(" + displaySize * currentTab * -1  + "px)";
+    var sectionHeight;
+    document.querySelectorAll('.animated-section').forEach(step => {
+      if(step.dataset.step == nextTab) {
+        sectionHeight = step.offsetHeight;
+        var tableHeight = document.querySelector('.table-height').offsetHeight;
+        document.querySelector('.formDisplay').style.height = sectionHeight + 80 + "px";
+        document.querySelector('.actionButtons').style.position = "relative";
+        document.querySelector('.actionButtons').style.bottom = tableHeight - sectionHeight - 24 + "px"
+      }
+    })
+    document.querySelectorAll('.step').forEach(step => {
+      if(step.dataset.step == nextTab) {
+        step.classList.remove("hidden");
+      } else {
+        step.classList.add("hidden");
+      }
+    })
+  } else {
+
+      tabBar.activateTab(currentTab);
+  }
 });
 
 
@@ -299,7 +331,7 @@ document.querySelector('.attened-ps__no').addEventListener('click', function() {
 // checkTabs();
 
 
-function checkValidity(formID, callback) {
+function checkValidity(formID) {
   let form = document.forms['form-step-' + formID];
   for(let i = 0; i < form.elements.length; i++) {
     let input = form.elements.item(i);
@@ -308,7 +340,9 @@ function checkValidity(formID, callback) {
 
   }
   if(form.reportValidity()) {
-    callback();
+    return true;
+  } else {
+    return false;
   }
 }
 
@@ -325,10 +359,28 @@ function checkValidityInput(input) {
 document.querySelectorAll('.form-submit').forEach(button => {
   button.addEventListener('click', function() {
     document.querySelector('.move-row').classList.add('move-step1');
-    checkValidity(button.dataset.step, function() {
+    if(checkValidity(button.dataset.step)) {
       completedTab[button.dataset.step] = 1;
+      let form = document.forms['form-step-' + button.dataset.step];
+      for(let i = 0; i < form.elements.length; i++) {
+        let input = form.elements.item(i);
+        console.log(input.value != "")
+        if(input.value != "") {
+          if(input.type == 'radio') {
+            if(input.checked == true) {
+              formData.append(input.name, input.value);
+            }
+          } else {
+            formData.append(input.name, input.value);
+          }
+
+        }
+      }
+      for(let key of formData.values()) {
+        console.log(key);
+      }
       tabBar.activateTab(button.dataset.tostep);
-    });
+    }
   });
 });
 

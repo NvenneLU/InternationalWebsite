@@ -126,7 +126,7 @@
                       <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
                         <!-- First name field TYPE: TEXT, REQUIRED-->
                         <div class="mdc-text-field intl-field">
-                          <input type="text" id="textfield-firstname" class="mdc-text-field__input" required>
+                          <input type="text" id="textfield-firstname" class="mdc-text-field__input" name="personal-firstname"required>
                           <label class="mdc-floating-label" for="textfield-firstname">First Name</label>
                           <div class="mdc-line-ripple"></div>
                         </div>
@@ -135,7 +135,7 @@
                       <!-- Middle name field TYPE: TEXT -->
                       <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
                         <div class="mdc-text-field intl-field">
-                          <input type="text" id="textfield-middlename" class="mdc-text-field__input">
+                          <input type="text" id="textfield-middlename" class="mdc-text-field__input" name="personal-middlename">
                           <label class="mdc-floating-label" for="textfield-middlename">Middle Name</label>
                           <div class="mdc-line-ripple"></div>
                         </div>
@@ -144,7 +144,7 @@
                       <!-- Family name field TYPE: TEXT, REQUIRED-->
                       <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
                         <div class="mdc-text-field intl-field">
-                          <input type="text" id="textfield-familyname" class="mdc-text-field__input" required data-name="Last name">
+                          <input type="text" id="textfield-familyname" class="mdc-text-field__input" required name="personal-lastname">
                           <label class="mdc-floating-label" for="textfield-familyname">Family Name</label>
                           <div class="mdc-line-ripple"></div>
                         </div>
@@ -153,7 +153,7 @@
                       <!-- Former name field TYPE: TEXT -->
                       <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
                         <div class="mdc-text-field intl-field">
-                          <input type="text" id="textfield-formername" class="mdc-text-field__input">
+                          <input type="text" id="textfield-formername" class="mdc-text-field__input" name="personal-formername">
                           <label class="mdc-floating-label" for="textfield-formername">Former Name</label>
                           <div class="mdc-line-ripple"></div>
                         </div>
@@ -162,7 +162,7 @@
                       <!-- Date of birth field TYPE: DATE, REQUIRED -->
                       <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
                         <div class="mdc-text-field intl-field">
-                          <input type="date" id="textfield-dob" class="mdc-text-field__input" required>
+                          <input type="date" id="textfield-dob" class="mdc-text-field__input" required name="personal-dob">
                           <label class="mdc-floating-label" for="textfield-dob">Date of birth</label>
                           <div class="mdc-line-ripple"></div>
                         </div>
@@ -172,7 +172,7 @@
                       <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
                         <div class="mdc-select intl-field">
                           <i class="mdc-select__dropdown-icon"></i>
-                          <select class="mdc-select__native-control" required>
+                          <select class="mdc-select__native-control" required name="personal-gender">
                             <option value="" disabled selected></option>
                             <option value="female">
                               Female
@@ -198,7 +198,7 @@
                       <!-- Phone primary field TYPE: TEL, REQUIRED -->
                       <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
                         <div class="mdc-text-field intl-field">
-                          <input type="tel" id="textfield-telprimary" class="mdc-text-field__input" required>
+                          <input type="tel" id="textfield-telprimary" class="mdc-text-field__input" required name="personal-tel--primary">
                           <label class="mdc-floating-label" for="textfield-telprimary">Phone (primary)</label>
                           <div class="mdc-line-ripple"></div>
                         </div>
@@ -207,7 +207,7 @@
                       <!-- Phone work field TYPE: TEL -->
                       <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
                         <div class="mdc-text-field intl-field">
-                          <input type="tel" id="textfield-telwork" class="mdc-text-field__input">
+                          <input type="tel" id="textfield-telwork" class="mdc-text-field__input" name="personal-tel--work">
                           <label class="mdc-floating-label" for="textfield-telwork">Phone (work)</label>
                           <div class="mdc-line-ripple"></div>
                         </div>
@@ -223,7 +223,7 @@
                       <!-- Address line 1 field TYPE: TEXT, REQUIRED -->
                       <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
                         <div class="mdc-text-field intl-field">
-                          <input type="text" id="textfield-address__line1" class="mdc-text-field__input" required>
+                          <input type="text" id="textfield-address__line1" class="mdc-text-field__input" required name="personal-address--line1">
                           <label class="mdc-floating-label" for="textfield-address__line1">Address Line 1</label>
                           <div class="mdc-line-ripple"></div>
                         </div>
@@ -232,7 +232,7 @@
                       <!-- Address line 2 field TYPE: TEXT -->
                       <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
                         <div class="mdc-text-field intl-field">
-                          <input type="text" id="textfield-address__line2" class="mdc-text-field__input">
+                          <input type="text" id="textfield-address__line2" class="mdc-text-field__input" name="personal-address--line2">
                           <label class="mdc-floating-label" for="textfield-address__line2">Address Line 2</label>
                           <div class="mdc-line-ripple"></div>
                         </div>
@@ -241,7 +241,7 @@
                       <!-- City field TYPE: TEXT, REQUIRED -->
                       <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
                         <div class="mdc-text-field intl-field">
-                          <input type="text" id="textfield-address__city" class="mdc-text-field__input" required>
+                          <input type="text" id="textfield-address__city" class="mdc-text-field__input" required name="personal-address--city">
                           <label class="mdc-floating-label" for="textfield-address__city">City</label>
                           <div class="mdc-line-ripple"></div>
                         </div>
@@ -250,7 +250,7 @@
                       <!-- State field TYPE: TEXT, REQUIRED -->
                       <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
                         <div class="mdc-text-field intl-field">
-                          <input type="text" id="textfield-address__state" class="mdc-text-field__input" required>
+                          <input type="text" id="textfield-address__state" class="mdc-text-field__input" required name="personal-address--state">
                           <label class="mdc-floating-label" for="textfield-address__state">State / Province / Region</label>
                           <div class="mdc-line-ripple"></div>
                         </div>
@@ -259,7 +259,7 @@
                       <!-- Postal code field TYPE: TEXT, REQUIRED -->
                       <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
                         <div class="mdc-text-field intl-field">
-                          <input type="text" id="textfield-address__zip" class="mdc-text-field__input" required>
+                          <input type="text" id="textfield-address__zip" class="mdc-text-field__input" required name="personal-address--zip">
                           <label class="mdc-floating-label" for="textfield-address__zip">Postal Code / ZIP</label>
                           <div class="mdc-line-ripple"></div>
                         </div>
@@ -269,11 +269,10 @@
                       <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
                         <div class="mdc-select intl-field">
                           <i class="mdc-select__dropdown-icon"></i>
-                          <select class="mdc-select__native-control" required>
+                          <select class="mdc-select__native-control" required name="personal-address--country">
                             <option value="" disabled selected></option>
-                            <option value="canada">
-                              Canada
-                            </option>
+                            <option value="canada">Canada</option>
+
                           </select>
                           <label class="mdc-floating-label">Country</label>
                           <div class="mdc-line-ripple"></div>
@@ -283,7 +282,7 @@
                       <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-8-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
                         <div class="mdc-select intl-field">
                           <i class="mdc-select__dropdown-icon"></i>
-                          <select class="mdc-select__native-control" required>
+                          <select class="mdc-select__native-control" required name="personal-address--citizenship">
                             <option value="" disabled selected></option>
                             <option value="canada">
                               Canada
@@ -304,7 +303,7 @@
                       <!-- Email primary field TYPE: EMAIL, REQUIRED -->
                       <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
                         <div class="mdc-text-field intl-field">
-                          <input type="email" id="textfield-email__primary" class="mdc-text-field__input" required pattern="^[a-zA-Z0-9.!#$%'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$">
+                          <input type="email" id="textfield-email__primary" class="mdc-text-field__input" name="personal-email--primary" required pattern="^[a-zA-Z0-9.!#$%'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$">
                           <label class="mdc-floating-label" for="textfield-email__primary">Email (Primary)</label>
                           <div class="mdc-line-ripple"></div>
                         </div>
@@ -313,7 +312,7 @@
                       <!-- Email secondary field TYPE: EMAIL -->
                       <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
                         <div class="mdc-text-field intl-field">
-                          <input type="email" id="textfield-email__secondary" class="mdc-text-field__input">
+                          <input type="email" id="textfield-email__secondary" class="mdc-text-field__input" name="personal-email--secondary">
                           <label class="mdc-floating-label" for="textfield-email__secondary">Email (Secondary)</label>
                           <div class="mdc-line-ripple"></div>
                         </div>
@@ -328,7 +327,7 @@
                       <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
                         <div class="mdc-select intl-field">
                           <i class="mdc-select__dropdown-icon"></i>
-                          <select class="mdc-select__native-control" required>
+                          <select class="mdc-select__native-control" required name="personal-educationLevel">
                             <option value="" disabled selected></option>
                             <option value="highschool">
                               High School
@@ -349,7 +348,7 @@
                         <h1 class="mdc-typography--subtitle2">Principal language of communication</h1>
                         <div class="mdc-form-field">
                           <div class="mdc-radio">
-                            <input class="mdc-radio__native-control" type="radio" id="radio-language__principal1" name="radio-language__principal" checked required>
+                            <input class="mdc-radio__native-control" value="en" type="radio" id="radio-language__principal1" name="radio-language__principal" checked required>
                             <div class="mdc-radio__background">
                               <div class="mdc-radio__outer-circle"></div>
                               <div class="mdc-radio__inner-circle"></div>
@@ -360,7 +359,7 @@
                         <br>
                         <div class="mdc-form-field">
                           <div class="mdc-radio">
-                            <input class="mdc-radio__native-control" type="radio" id="radio-language__principal2" name="radio-language__principal">
+                            <input class="mdc-radio__native-control" type="radio" value="fr" id="radio-language__principal2" name="radio-language__principal">
                             <div class="mdc-radio__background">
                               <div class="mdc-radio__outer-circle"></div>
                               <div class="mdc-radio__inner-circle"></div>
@@ -374,7 +373,7 @@
                         <h1 class="mdc-typography--subtitle2">First language</h1>
                         <div class="mdc-form-field">
                           <div class="mdc-radio">
-                            <input class="mdc-radio__native-control" type="radio" id="radio-language__first1" name="radio-language__first" checked required>
+                            <input class="mdc-radio__native-control" value="en" type="radio" id="radio-language__first1" name="radio-language__first" checked required>
                             <div class="mdc-radio__background">
                               <div class="mdc-radio__outer-circle"></div>
                               <div class="mdc-radio__inner-circle"></div>
@@ -385,7 +384,7 @@
                         <br>
                         <div class="mdc-form-field">
                           <div class="mdc-radio">
-                            <input class="mdc-radio__native-control" type="radio" id="radio-language__first2" name="radio-language__first">
+                            <input class="mdc-radio__native-control" value="fr" type="radio" id="radio-language__first2" name="radio-language__first">
                             <div class="mdc-radio__background">
                               <div class="mdc-radio__outer-circle"></div>
                               <div class="mdc-radio__inner-circle"></div>
@@ -403,7 +402,7 @@
                             </div>
                           </div>
                           <div class="mdc-text-field intl-field">
-                            <input type="text" id="textfield-language__other" class="mdc-text-field__input">
+                            <input type="text" id="textfield-language__other" class="mdc-text-field__input" name="personal-language--first__other">
                             <label class="mdc-floating-label" for="textfield-language__other">Other</label>
                             <div class="mdc-line-ripple"></div>
                           </div>

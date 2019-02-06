@@ -4,7 +4,7 @@
   "description": "Laurentian University International Student Website Form",
   "main": "webpack.config.js",
   "scripts": {
-    "start": "webpack-dev-server --progress",
+    "start": "webpack-dev-server --progress --host 0.0.0.0",
     "build": "webpack -p"
   },
   "devDependencies": {},
